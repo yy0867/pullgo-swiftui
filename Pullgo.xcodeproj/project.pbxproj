@@ -11,7 +11,51 @@
 		A5537E692860358300FE7027 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5537E682860358300FE7027 /* ContentView.swift */; };
 		A5537E6B2860358300FE7027 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5537E6A2860358300FE7027 /* Assets.xcassets */; };
 		A5537E6E2860358300FE7027 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5537E6D2860358300FE7027 /* Preview Assets.xcassets */; };
+		A5537E7C2860369400FE7027 /* PullgoKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A5537E7B2860369400FE7027 /* PullgoKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A5537E7F2860369400FE7027 /* PullgoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5537E792860369400FE7027 /* PullgoKit.framework */; };
+		A5537E802860369400FE7027 /* PullgoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A5537E792860369400FE7027 /* PullgoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A5537E8C286036AB00FE7027 /* PullgoKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5537E8B286036AB00FE7027 /* PullgoKitTests.swift */; };
+		A5537E8D286036AB00FE7027 /* PullgoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5537E792860369400FE7027 /* PullgoKit.framework */; };
+		A5537E9A286036C100FE7027 /* PullgoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5537E99286036C100FE7027 /* PullgoTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A5537E7D2860369400FE7027 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5537E5B2860358300FE7027 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A5537E782860369400FE7027;
+			remoteInfo = PullgoKit;
+		};
+		A5537E8E286036AB00FE7027 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5537E5B2860358300FE7027 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A5537E782860369400FE7027;
+			remoteInfo = PullgoKit;
+		};
+		A5537E9B286036C100FE7027 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5537E5B2860358300FE7027 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A5537E622860358300FE7027;
+			remoteInfo = Pullgo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A5537E842860369400FE7027 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A5537E802860369400FE7027 /* PullgoKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		A5537E632860358300FE7027 /* Pullgo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pullgo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -19,10 +63,39 @@
 		A5537E682860358300FE7027 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A5537E6A2860358300FE7027 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5537E6D2860358300FE7027 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A5537E792860369400FE7027 /* PullgoKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PullgoKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5537E7B2860369400FE7027 /* PullgoKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PullgoKit.h; sourceTree = "<group>"; };
+		A5537E89286036AB00FE7027 /* PullgoKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PullgoKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5537E8B286036AB00FE7027 /* PullgoKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullgoKitTests.swift; sourceTree = "<group>"; };
+		A5537E97286036C100FE7027 /* PullgoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PullgoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5537E99286036C100FE7027 /* PullgoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullgoTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A5537E602860358300FE7027 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5537E7F2860369400FE7027 /* PullgoKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5537E762860369400FE7027 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5537E86286036AB00FE7027 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5537E8D286036AB00FE7027 /* PullgoKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5537E94286036C100FE7027 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -36,6 +109,9 @@
 			isa = PBXGroup;
 			children = (
 				A5537E652860358300FE7027 /* Pullgo */,
+				A5537E98286036C100FE7027 /* PullgoTests */,
+				A5537E7A2860369400FE7027 /* PullgoKit */,
+				A5537E8A286036AB00FE7027 /* PullgoKitTests */,
 				A5537E642860358300FE7027 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -44,6 +120,9 @@
 			isa = PBXGroup;
 			children = (
 				A5537E632860358300FE7027 /* Pullgo.app */,
+				A5537E792860369400FE7027 /* PullgoKit.framework */,
+				A5537E89286036AB00FE7027 /* PullgoKitTests.xctest */,
+				A5537E97286036C100FE7027 /* PullgoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,7 +146,42 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		A5537E7A2860369400FE7027 /* PullgoKit */ = {
+			isa = PBXGroup;
+			children = (
+				A5537E7B2860369400FE7027 /* PullgoKit.h */,
+			);
+			path = PullgoKit;
+			sourceTree = "<group>";
+		};
+		A5537E8A286036AB00FE7027 /* PullgoKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				A5537E8B286036AB00FE7027 /* PullgoKitTests.swift */,
+			);
+			path = PullgoKitTests;
+			sourceTree = "<group>";
+		};
+		A5537E98286036C100FE7027 /* PullgoTests */ = {
+			isa = PBXGroup;
+			children = (
+				A5537E99286036C100FE7027 /* PullgoTests.swift */,
+			);
+			path = PullgoTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A5537E742860369400FE7027 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5537E7C2860369400FE7027 /* PullgoKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		A5537E622860358300FE7027 /* Pullgo */ = {
@@ -77,15 +191,71 @@
 				A5537E5F2860358300FE7027 /* Sources */,
 				A5537E602860358300FE7027 /* Frameworks */,
 				A5537E612860358300FE7027 /* Resources */,
+				A5537E842860369400FE7027 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A5537E7E2860369400FE7027 /* PBXTargetDependency */,
 			);
 			name = Pullgo;
 			productName = Pullgo;
 			productReference = A5537E632860358300FE7027 /* Pullgo.app */;
 			productType = "com.apple.product-type.application";
+		};
+		A5537E782860369400FE7027 /* PullgoKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5537E812860369400FE7027 /* Build configuration list for PBXNativeTarget "PullgoKit" */;
+			buildPhases = (
+				A5537E742860369400FE7027 /* Headers */,
+				A5537E752860369400FE7027 /* Sources */,
+				A5537E762860369400FE7027 /* Frameworks */,
+				A5537E772860369400FE7027 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PullgoKit;
+			productName = PullgoKit;
+			productReference = A5537E792860369400FE7027 /* PullgoKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A5537E88286036AB00FE7027 /* PullgoKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5537E90286036AB00FE7027 /* Build configuration list for PBXNativeTarget "PullgoKitTests" */;
+			buildPhases = (
+				A5537E85286036AB00FE7027 /* Sources */,
+				A5537E86286036AB00FE7027 /* Frameworks */,
+				A5537E87286036AB00FE7027 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A5537E8F286036AB00FE7027 /* PBXTargetDependency */,
+			);
+			name = PullgoKitTests;
+			productName = PullgoKitTests;
+			productReference = A5537E89286036AB00FE7027 /* PullgoKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A5537E96286036C100FE7027 /* PullgoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5537E9D286036C100FE7027 /* Build configuration list for PBXNativeTarget "PullgoTests" */;
+			buildPhases = (
+				A5537E93286036C100FE7027 /* Sources */,
+				A5537E94286036C100FE7027 /* Frameworks */,
+				A5537E95286036C100FE7027 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A5537E9C286036C100FE7027 /* PBXTargetDependency */,
+			);
+			name = PullgoTests;
+			productName = PullgoTests;
+			productReference = A5537E97286036C100FE7027 /* PullgoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -99,6 +269,16 @@
 				TargetAttributes = {
 					A5537E622860358300FE7027 = {
 						CreatedOnToolsVersion = 13.3;
+					};
+					A5537E782860369400FE7027 = {
+						CreatedOnToolsVersion = 13.3;
+					};
+					A5537E88286036AB00FE7027 = {
+						CreatedOnToolsVersion = 13.3;
+					};
+					A5537E96286036C100FE7027 = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = A5537E622860358300FE7027;
 					};
 				};
 			};
@@ -116,6 +296,9 @@
 			projectRoot = "";
 			targets = (
 				A5537E622860358300FE7027 /* Pullgo */,
+				A5537E782860369400FE7027 /* PullgoKit */,
+				A5537E88286036AB00FE7027 /* PullgoKitTests */,
+				A5537E96286036C100FE7027 /* PullgoTests */,
 			);
 		};
 /* End PBXProject section */
@@ -127,6 +310,27 @@
 			files = (
 				A5537E6E2860358300FE7027 /* Preview Assets.xcassets in Resources */,
 				A5537E6B2860358300FE7027 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5537E772860369400FE7027 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5537E87286036AB00FE7027 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5537E95286036C100FE7027 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,7 +346,48 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A5537E752860369400FE7027 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5537E85286036AB00FE7027 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5537E8C286036AB00FE7027 /* PullgoKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5537E93286036C100FE7027 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5537E9A286036C100FE7027 /* PullgoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A5537E7E2860369400FE7027 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A5537E782860369400FE7027 /* PullgoKit */;
+			targetProxy = A5537E7D2860369400FE7027 /* PBXContainerItemProxy */;
+		};
+		A5537E8F286036AB00FE7027 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A5537E782860369400FE7027 /* PullgoKit */;
+			targetProxy = A5537E8E286036AB00FE7027 /* PBXContainerItemProxy */;
+		};
+		A5537E9C286036C100FE7027 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A5537E622860358300FE7027 /* Pullgo */;
+			targetProxy = A5537E9B286036C100FE7027 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		A5537E6F2860358300FE7027 /* Debug */ = {
@@ -317,6 +562,134 @@
 			};
 			name = Release;
 		};
+		A5537E822860369400FE7027 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = GTB6BR222W;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Harry.PullgoKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A5537E832860369400FE7027 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = GTB6BR222W;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Harry.PullgoKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A5537E91286036AB00FE7027 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GTB6BR222W;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Harry.PullgoKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A5537E92286036AB00FE7027 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GTB6BR222W;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Harry.PullgoKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A5537E9E286036C100FE7027 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GTB6BR222W;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Harry.PullgoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pullgo.app/Pullgo";
+			};
+			name = Debug;
+		};
+		A5537E9F286036C100FE7027 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GTB6BR222W;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Harry.PullgoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pullgo.app/Pullgo";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -334,6 +707,33 @@
 			buildConfigurations = (
 				A5537E722860358300FE7027 /* Debug */,
 				A5537E732860358300FE7027 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A5537E812860369400FE7027 /* Build configuration list for PBXNativeTarget "PullgoKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5537E822860369400FE7027 /* Debug */,
+				A5537E832860369400FE7027 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A5537E90286036AB00FE7027 /* Build configuration list for PBXNativeTarget "PullgoKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5537E91286036AB00FE7027 /* Debug */,
+				A5537E92286036AB00FE7027 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A5537E9D286036C100FE7027 /* Build configuration list for PBXNativeTarget "PullgoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5537E9E286036C100FE7027 /* Debug */,
+				A5537E9F286036C100FE7027 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
