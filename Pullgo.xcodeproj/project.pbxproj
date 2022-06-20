@@ -20,6 +20,11 @@
 		A5537EA82860387500FE7027 /* NetworkKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A5537EA72860387500FE7027 /* NetworkKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A5537EAB2860387500FE7027 /* NetworkKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5537EA52860387500FE7027 /* NetworkKit.framework */; };
 		A5537EAC2860387500FE7027 /* NetworkKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A5537EA52860387500FE7027 /* NetworkKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A5537EB12860388B00FE7027 /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5537EB02860388B00FE7027 /* NetworkSession.swift */; };
+		A5537EB32860398000FE7027 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5537EB22860398000FE7027 /* NetworkError.swift */; };
+		A5537EB528603A3000FE7027 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5537EB428603A3000FE7027 /* Logger.swift */; };
+		A5537EB628603A9600FE7027 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5537EB428603A3000FE7027 /* Logger.swift */; };
+		A5537EB728603A9700FE7027 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5537EB428603A3000FE7027 /* Logger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +87,9 @@
 		A5537E99286036C100FE7027 /* PullgoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullgoTests.swift; sourceTree = "<group>"; };
 		A5537EA52860387500FE7027 /* NetworkKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetworkKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5537EA72860387500FE7027 /* NetworkKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkKit.h; sourceTree = "<group>"; };
+		A5537EB02860388B00FE7027 /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
+		A5537EB22860398000FE7027 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		A5537EB428603A3000FE7027 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +137,7 @@
 		A5537E5A2860358300FE7027 = {
 			isa = PBXGroup;
 			children = (
+				A5537EB428603A3000FE7027 /* Logger.swift */,
 				A5537E652860358300FE7027 /* Pullgo */,
 				A5537E98286036C100FE7027 /* PullgoTests */,
 				A5537E7A2860369400FE7027 /* PullgoKit */,
@@ -197,6 +206,8 @@
 			isa = PBXGroup;
 			children = (
 				A5537EA72860387500FE7027 /* NetworkKit.h */,
+				A5537EB02860388B00FE7027 /* NetworkSession.swift */,
+				A5537EB22860398000FE7027 /* NetworkError.swift */,
 			);
 			path = NetworkKit;
 			sourceTree = "<group>";
@@ -340,6 +351,7 @@
 					};
 					A5537EA42860387500FE7027 = {
 						CreatedOnToolsVersion = 13.3;
+						LastSwiftMigration = 1330;
 					};
 				};
 			};
@@ -411,6 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5537E692860358300FE7027 /* ContentView.swift in Sources */,
+				A5537EB728603A9700FE7027 /* Logger.swift in Sources */,
 				A5537E672860358300FE7027 /* PullgoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,6 +432,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5537EB628603A9600FE7027 /* Logger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +456,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5537EB12860388B00FE7027 /* NetworkSession.swift in Sources */,
+				A5537EB528603A3000FE7027 /* Logger.swift in Sources */,
+				A5537EB32860398000FE7027 /* NetworkError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,6 +605,7 @@
 		A5537E722860358300FE7027 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -617,6 +635,7 @@
 		A5537E732860358300FE7027 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -706,6 +725,7 @@
 		A5537E91286036AB00FE7027 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GTB6BR222W;
@@ -722,6 +742,7 @@
 		A5537E92286036AB00FE7027 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GTB6BR222W;
@@ -774,6 +795,7 @@
 		A5537EAD2860387500FE7027 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -794,6 +816,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -804,6 +827,7 @@
 		A5537EAE2860387500FE7027 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;

@@ -12,7 +12,7 @@ public final class Log {
     
     private static let logger = Logger()
     
-    static func log(_ message: String, level: OSLogType = .default) {
+    static func print(_ message: String, level: OSLogType = .default) {
         logger.log(level: level, "\(message)")
     }
 }
