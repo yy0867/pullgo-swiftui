@@ -17,6 +17,15 @@
 		A5537E8C286036AB00FE7027 /* PullgoKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5537E8B286036AB00FE7027 /* PullgoKitTests.swift */; };
 		A5537E8D286036AB00FE7027 /* PullgoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5537E792860369400FE7027 /* PullgoKit.framework */; };
 		A5537E9A286036C100FE7027 /* PullgoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5537E99286036C100FE7027 /* PullgoTests.swift */; };
+		A5537EA82860387500FE7027 /* NetworkKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A5537EA72860387500FE7027 /* NetworkKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A5537EAB2860387500FE7027 /* NetworkKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5537EA52860387500FE7027 /* NetworkKit.framework */; };
+		A5537EAC2860387500FE7027 /* NetworkKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A5537EA52860387500FE7027 /* NetworkKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A5537EB12860388B00FE7027 /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5537EB02860388B00FE7027 /* NetworkSession.swift */; };
+		A5537EB32860398000FE7027 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5537EB22860398000FE7027 /* NetworkError.swift */; };
+		A5537EB528603A3000FE7027 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5537EB428603A3000FE7027 /* Logger.swift */; };
+		A5537EB628603A9600FE7027 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5537EB428603A3000FE7027 /* Logger.swift */; };
+		A5537EB728603A9700FE7027 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5537EB428603A3000FE7027 /* Logger.swift */; };
+		A5537EB928603C8000FE7027 /* URLRequest+.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5537EB828603C8000FE7027 /* URLRequest+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +50,13 @@
 			remoteGlobalIDString = A5537E622860358300FE7027;
 			remoteInfo = Pullgo;
 		};
+		A5537EA92860387500FE7027 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5537E5B2860358300FE7027 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A5537EA42860387500FE7027;
+			remoteInfo = NetworkKit;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -50,6 +66,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				A5537EAC2860387500FE7027 /* NetworkKit.framework in Embed Frameworks */,
 				A5537E802860369400FE7027 /* PullgoKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -69,6 +86,12 @@
 		A5537E8B286036AB00FE7027 /* PullgoKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullgoKitTests.swift; sourceTree = "<group>"; };
 		A5537E97286036C100FE7027 /* PullgoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PullgoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5537E99286036C100FE7027 /* PullgoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullgoTests.swift; sourceTree = "<group>"; };
+		A5537EA52860387500FE7027 /* NetworkKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetworkKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5537EA72860387500FE7027 /* NetworkKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkKit.h; sourceTree = "<group>"; };
+		A5537EB02860388B00FE7027 /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
+		A5537EB22860398000FE7027 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		A5537EB428603A3000FE7027 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		A5537EB828603C8000FE7027 /* URLRequest+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5537EAB2860387500FE7027 /* NetworkKit.framework in Frameworks */,
 				A5537E7F2860369400FE7027 /* PullgoKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,16 +126,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A5537EA22860387500FE7027 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		A5537E5A2860358300FE7027 = {
 			isa = PBXGroup;
 			children = (
+				A5537EB428603A3000FE7027 /* Logger.swift */,
 				A5537E652860358300FE7027 /* Pullgo */,
 				A5537E98286036C100FE7027 /* PullgoTests */,
 				A5537E7A2860369400FE7027 /* PullgoKit */,
 				A5537E8A286036AB00FE7027 /* PullgoKitTests */,
+				A5537EA62860387500FE7027 /* NetworkKit */,
 				A5537E642860358300FE7027 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -123,6 +156,7 @@
 				A5537E792860369400FE7027 /* PullgoKit.framework */,
 				A5537E89286036AB00FE7027 /* PullgoKitTests.xctest */,
 				A5537E97286036C100FE7027 /* PullgoTests.xctest */,
+				A5537EA52860387500FE7027 /* NetworkKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -170,6 +204,17 @@
 			path = PullgoTests;
 			sourceTree = "<group>";
 		};
+		A5537EA62860387500FE7027 /* NetworkKit */ = {
+			isa = PBXGroup;
+			children = (
+				A5537EA72860387500FE7027 /* NetworkKit.h */,
+				A5537EB02860388B00FE7027 /* NetworkSession.swift */,
+				A5537EB22860398000FE7027 /* NetworkError.swift */,
+				A5537EB828603C8000FE7027 /* URLRequest+.swift */,
+			);
+			path = NetworkKit;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -178,6 +223,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5537E7C2860369400FE7027 /* PullgoKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5537EA02860387500FE7027 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5537EA82860387500FE7027 /* NetworkKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +250,7 @@
 			);
 			dependencies = (
 				A5537E7E2860369400FE7027 /* PBXTargetDependency */,
+				A5537EAA2860387500FE7027 /* PBXTargetDependency */,
 			);
 			name = Pullgo;
 			productName = Pullgo;
@@ -257,6 +311,24 @@
 			productReference = A5537E97286036C100FE7027 /* PullgoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		A5537EA42860387500FE7027 /* NetworkKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5537EAF2860387500FE7027 /* Build configuration list for PBXNativeTarget "NetworkKit" */;
+			buildPhases = (
+				A5537EA02860387500FE7027 /* Headers */,
+				A5537EA12860387500FE7027 /* Sources */,
+				A5537EA22860387500FE7027 /* Frameworks */,
+				A5537EA32860387500FE7027 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NetworkKit;
+			productName = NetworkKit;
+			productReference = A5537EA52860387500FE7027 /* NetworkKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -280,6 +352,10 @@
 						CreatedOnToolsVersion = 13.3;
 						TestTargetID = A5537E622860358300FE7027;
 					};
+					A5537EA42860387500FE7027 = {
+						CreatedOnToolsVersion = 13.3;
+						LastSwiftMigration = 1330;
+					};
 				};
 			};
 			buildConfigurationList = A5537E5E2860358300FE7027 /* Build configuration list for PBXProject "Pullgo" */;
@@ -299,6 +375,7 @@
 				A5537E782860369400FE7027 /* PullgoKit */,
 				A5537E88286036AB00FE7027 /* PullgoKitTests */,
 				A5537E96286036C100FE7027 /* PullgoTests */,
+				A5537EA42860387500FE7027 /* NetworkKit */,
 			);
 		};
 /* End PBXProject section */
@@ -334,6 +411,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A5537EA32860387500FE7027 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -342,6 +426,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5537E692860358300FE7027 /* ContentView.swift in Sources */,
+				A5537EB728603A9700FE7027 /* Logger.swift in Sources */,
 				A5537E672860358300FE7027 /* PullgoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,6 +435,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5537EB628603A9600FE7027 /* Logger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +452,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5537E9A286036C100FE7027 /* PullgoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A5537EA12860387500FE7027 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5537EB12860388B00FE7027 /* NetworkSession.swift in Sources */,
+				A5537EB528603A3000FE7027 /* Logger.swift in Sources */,
+				A5537EB32860398000FE7027 /* NetworkError.swift in Sources */,
+				A5537EB928603C8000FE7027 /* URLRequest+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +483,11 @@
 			isa = PBXTargetDependency;
 			target = A5537E622860358300FE7027 /* Pullgo */;
 			targetProxy = A5537E9B286036C100FE7027 /* PBXContainerItemProxy */;
+		};
+		A5537EAA2860387500FE7027 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A5537EA42860387500FE7027 /* NetworkKit */;
+			targetProxy = A5537EA92860387500FE7027 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -507,6 +609,7 @@
 		A5537E722860358300FE7027 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -536,6 +639,7 @@
 		A5537E732860358300FE7027 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -625,6 +729,7 @@
 		A5537E91286036AB00FE7027 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GTB6BR222W;
@@ -641,6 +746,7 @@
 		A5537E92286036AB00FE7027 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GTB6BR222W;
@@ -690,6 +796,69 @@
 			};
 			name = Release;
 		};
+		A5537EAD2860387500FE7027 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = GTB6BR222W;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Harry.NetworkKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A5537EAE2860387500FE7027 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = GTB6BR222W;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Harry.NetworkKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -734,6 +903,15 @@
 			buildConfigurations = (
 				A5537E9E286036C100FE7027 /* Debug */,
 				A5537E9F286036C100FE7027 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A5537EAF2860387500FE7027 /* Build configuration list for PBXNativeTarget "NetworkKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5537EAD2860387500FE7027 /* Debug */,
+				A5537EAE2860387500FE7027 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
