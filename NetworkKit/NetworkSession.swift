@@ -31,4 +31,9 @@ public final class NetworkSession {
             }
             .eraseToAnyPublisher()
     }
+    
+    public func request(_ url: URL) -> AnyPublisher<Data, Error> {
+        let urlRequest = URLRequest(url: url)
+        return self.request(urlRequest)
+    }
 }
