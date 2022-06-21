@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import PullgoKit
 
 struct LaunchView: View {
     
-    @StateObject private var viewModel = LaunchViewModel()
+    @EnvironmentObject private var viewModel: LaunchViewModel
     
     var body: some View {        
         contentView()
@@ -30,5 +31,6 @@ struct LaunchView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         LaunchView()
+            .environmentObject(dev.getLaunchViewModel())
     }
 }
