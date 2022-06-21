@@ -39,6 +39,8 @@
 		A5A37EE728604666007192BC /* UserSessionDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A37EE628604666007192BC /* UserSessionDataStore.swift */; };
 		A5D88E9C2861890400DCB623 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88E9B2861890400DCB623 /* Endpoint.swift */; };
 		A5D88E9F28618A9E00DCB623 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88E9E28618A9E00DCB623 /* HTTPMethod.swift */; };
+		A5D88EA32861936600DCB623 /* UserSessionRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EA22861936600DCB623 /* UserSessionRepositoryProtocol.swift */; };
+		A5D88EA5286193FE00DCB623 /* UserSessionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EA4286193FE00DCB623 /* UserSessionRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +126,8 @@
 		A5A37EE628604666007192BC /* UserSessionDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionDataStore.swift; sourceTree = "<group>"; };
 		A5D88E9B2861890400DCB623 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		A5D88E9E28618A9E00DCB623 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		A5D88EA22861936600DCB623 /* UserSessionRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionRepositoryProtocol.swift; sourceTree = "<group>"; };
+		A5D88EA4286193FE00DCB623 /* UserSessionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				A5A37ED6286044F0007192BC /* Model */,
+				A5D88EA02861935500DCB623 /* Repository */,
 				A5A37ED4286044C4007192BC /* DataStore */,
 				A5537E7B2860369400FE7027 /* PullgoKit.h */,
 			);
@@ -304,6 +309,23 @@
 				A5D88E9E28618A9E00DCB623 /* HTTPMethod.swift */,
 			);
 			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		A5D88EA02861935500DCB623 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				A5D88EA12861935C00DCB623 /* UserSession */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		A5D88EA12861935C00DCB623 /* UserSession */ = {
+			isa = PBXGroup;
+			children = (
+				A5D88EA22861936600DCB623 /* UserSessionRepositoryProtocol.swift */,
+				A5D88EA4286193FE00DCB623 /* UserSessionRepository.swift */,
+			);
+			path = UserSession;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -566,8 +588,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5A37EE728604666007192BC /* UserSessionDataStore.swift in Sources */,
+				A5D88EA5286193FE00DCB623 /* UserSessionRepository.swift in Sources */,
 				A5A37EE52860456D007192BC /* UserSessionDataStoreProtocol.swift in Sources */,
 				A5A37EDF286044F0007192BC /* Teacher.swift in Sources */,
+				A5D88EA32861936600DCB623 /* UserSessionRepositoryProtocol.swift in Sources */,
 				A5A37EE1286044F0007192BC /* Student.swift in Sources */,
 				A5A37EDE286044F0007192BC /* UserSession.swift in Sources */,
 				A5A37EE0286044F0007192BC /* Account+Credential.swift in Sources */,
