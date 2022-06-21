@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import NetworkKit
 
 public enum PullgoError: Error {
     case unknown
