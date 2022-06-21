@@ -15,8 +15,13 @@ extension XCTestCase {
         return self.expectation(description: description)
     }
     
-    func failWhenReceiveError(_ error: Subscribers.Completion<Error>) {
-        XCTFail("Test failed at \(self.name)\nReceived error: \(error)")
+    func failWhenReceiveError(_ completion: Subscribers.Completion<Error>) {
+        switch completion {
+            case .finished:
+                return
+            case .failure(let error):
+                XCTFail("Test failed at \(self.name)\nReceived error: \(error)")
+        }
     }
     
     func failWhenReceiveValue(_ value: Any) {

@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import NetworkKit
 
 public final class UserSessionRepository: UserSessionRepositoryProtocol {
     
@@ -19,27 +20,37 @@ public final class UserSessionRepository: UserSessionRepositoryProtocol {
     }
     
     public func signIn(credential: Credential) -> AnyPublisher<UserSession, Error> {
-        return Fail(error: PullgoError.unknown)
+        return dataStore.signIn(credential: credential)
+            .mapError(mapSignInFailError)
             .eraseToAnyPublisher()
     }
     
     public func rememberMe() -> AnyPublisher<UserSession?, Never> {
-        return Just(nil)
-            .eraseToAnyPublisher()
+        return dataStore.rememberMe()
     }
     
     public func signUp(student: Student) -> AnyPublisher<Student, Error> {
-        return Fail(error: PullgoError.unknown)
-            .eraseToAnyPublisher()
+        return dataStore.signUp(student: student)
     }
     
     public func signUp(teacher: Teacher) -> AnyPublisher<Teacher, Error> {
-        return Fail(error: PullgoError.unknown)
-            .eraseToAnyPublisher()
+        return dataStore.signUp(teacher: teacher)
     }
     
     public func signOut() -> AnyPublisher<Bool, Never> {
-        return Just(false)
-            .eraseToAnyPublisher()
+        return dataStore.signOut()
+    }
+    
+    // MARK: - Privates
+    private func mapSignInFailError(_ error: Error) -> Error {
+        guard let error = error as? PullgoError else {
+            return error
+        }
+        
+        if case .networkError(error: .invalidCode(code: 401)) = error {
+            return PullgoError.signInFail
+        } else {
+            return error
+        }
     }
 }

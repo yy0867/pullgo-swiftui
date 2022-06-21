@@ -158,6 +158,7 @@ class SucceedUserSessionRepositoryTests: XCTestCase {
         repository.signOut()
             .sink(receiveValue: { receivedValue in
                 returnValue = receivedValue
+                expectation.fulfill()
             })
             .store(in: &cancellables)
         
@@ -224,7 +225,7 @@ class FailUserSessionRepositoryTests: XCTestCase {
         if case .signInFail = (error as! PullgoError) {
             return
         } else {
-            XCTFail("error should be signInFail.")
+            XCTFail("error should be signInFail.\nreceivedError: \(error?.localizedDescription ?? "nil.")")
         }
     }
     
@@ -341,6 +342,7 @@ class FailUserSessionRepositoryTests: XCTestCase {
         repository.signOut()
             .sink(receiveValue: { receivedValue in
                 returnValue = receivedValue
+                expectation.fulfill()
             })
             .store(in: &cancellables)
         

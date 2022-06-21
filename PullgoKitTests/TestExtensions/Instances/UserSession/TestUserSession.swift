@@ -43,11 +43,7 @@ class TestUserSessionDataStore: UserSessionDataStoreProtocol {
     }
     
     func signIn(credential: Credential) -> AnyPublisher<UserSession, Error> {
-        if !isSucceedCase {
-            // 에러 반환 (401 제외)
-            return Fail(error: PullgoError.networkError(error: .invalidCode(code: 500)))
-                .eraseToAnyPublisher()
-        } else {
+        if isSucceedCase {
             if credential.username == "student" {
                 // 학생 계정 반환
                 return Result.Publisher(UserSession(token: "token", student: fakeStudent, teacher: nil))
@@ -55,6 +51,16 @@ class TestUserSessionDataStore: UserSessionDataStoreProtocol {
             } else if credential.username == "teacher" {
                 // 선생님 계정 반환
                 return Result.Publisher(UserSession(token: "token", student: nil, teacher: fakeTeacher))
+                    .eraseToAnyPublisher()
+            } else {
+                // 로그인 실패 (401)
+                return Fail(error: PullgoError.networkError(error: .invalidCode(code: 401)))
+                    .eraseToAnyPublisher()
+            }
+        } else {
+            if credential.username == "student" || credential.username == "teacher" {
+                // 에러 반환 (401 제외)
+                return Fail(error: PullgoError.networkError(error: .invalidCode(code: 500)))
                     .eraseToAnyPublisher()
             } else {
                 // 로그인 실패 (401)

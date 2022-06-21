@@ -21,7 +21,6 @@ public final class UserSessionDataStore: UserSessionDataStoreProtocol {
         
         return NetworkSession.shared.request(endpoint.toURLRequest())
             .decode(type: UserSession.self, decoder: JSONDecoder())
-            .mapError(mapSignInFailError)
             .eraseToAnyPublisher()
     }
     
@@ -61,22 +60,9 @@ public final class UserSessionDataStore: UserSessionDataStoreProtocol {
     
     public func signOut() -> AnyPublisher<Bool, Never> {
         let tokenManager = KeychainTokenManager()
+        let deleteStatus = tokenManager.delete()
         
-        return Result.Publisher(tokenManager.delete())
+        return Result.Publisher(deleteStatus)
             .eraseToAnyPublisher()
-    }
-    
-    // MARK: - Privates
-    private func mapSignInFailError(_ error: Error) -> Error {
-        guard let error = error as? NetworkError else {
-            return error
-        }
-        
-        if case .invalidCode(let code) = error,
-           code == 401 {
-            return PullgoError.signInFail
-        } else {
-            return error
-        }
     }
 }
