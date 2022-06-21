@@ -6,6 +6,7 @@
 //
 
 import XCTest
+@testable import PullgoKit
 
 class PullgoTests: XCTestCase {
 
