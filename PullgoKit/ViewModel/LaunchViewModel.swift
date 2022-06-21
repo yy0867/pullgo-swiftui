@@ -7,16 +7,17 @@
 
 import Foundation
 import Combine
-import PullgoKit
 
-final class LaunchViewModel: ObservableObject {
+public final class LaunchViewModel: ObservableObject {
     
     // MARK: - Properties
-    @Resolve private var userSessionRepository: UserSessionRepositoryProtocol
-    @Published var appState: AppState = .launching(.starting)
+    private let userSessionRepository: UserSessionRepositoryProtocol
+    @Published public private(set) var appState: AppState = .launching(.starting)
     
     // MARK: - Methods
-    init() {
+    public init(userSessionRepository: UserSessionRepositoryProtocol) {
+        self.userSessionRepository = userSessionRepository
+        
         loadUserSession()
     }
     
