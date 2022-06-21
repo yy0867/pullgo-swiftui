@@ -8,10 +8,10 @@
 import SwiftUI
 
 @main
-struct PullgoApp: App {
+struct PullgoApp: App {    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LaunchView()
         }
     }
 }
