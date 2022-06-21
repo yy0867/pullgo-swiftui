@@ -15,6 +15,8 @@ public final class UserSessionDataStore: UserSessionDataStoreProtocol {
     // MARK: - Properties
     
     // MARK: - Methods
+    public init() {}
+    
     public func signIn(credential: Credential) -> AnyPublisher<UserSession, Error> {
         var endpoint = Endpoint(httpMethod: .post, paths: ["auth", "token"])
         endpoint.setHTTPBody(credential)
