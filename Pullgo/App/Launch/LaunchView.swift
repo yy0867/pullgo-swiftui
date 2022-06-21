@@ -9,11 +9,21 @@ import SwiftUI
 
 struct LaunchView: View {
     
+    @StateObject private var viewModel = LaunchViewModel()
     
+    var body: some View {        
+        contentView()
+    }
     
-    var body: some View {
-        Text("Hello, world!")
-            .padding()
+    func contentView() -> AnyView {
+        switch viewModel.appState {
+            case .launching:
+                // Navigate to LaunchView
+                return AnyView(Text("present launch view"))
+            case .running(let authenticationState):
+                // Navigate to RunningView
+                return AnyView(Text("running app"))
+        }
     }
 }
 
