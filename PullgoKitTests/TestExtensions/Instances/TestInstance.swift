@@ -13,6 +13,9 @@ class TestInstance {
     static let shared = TestInstance()
     
     // MARK: - UserSession
+    var fakeStudent: Student { succeedUserSessionDataStore.fakeStudent }
+    var fakeTeacher: Teacher { succeedUserSessionDataStore.fakeTeacher }
+    
     let succeedUserSessionDataStore = TestUserSessionDataStore(isSucceedCase: true)
     let failUserSessionDataStore = TestUserSessionDataStore(isSucceedCase: false)
 }
