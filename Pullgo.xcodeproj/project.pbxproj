@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		A501B8382861BF060074384A /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A501B8372861BF060074384A /* AppState.swift */; };
 		A518C0CD2861F3840077E5F0 /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518C0CC2861F3840077E5F0 /* LaunchViewModel.swift */; };
+		A518C0D02861F5A70077E5F0 /* DependencyContainer+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518C0CF2861F5A70077E5F0 /* DependencyContainer+Factory.swift */; };
+		A518C0D22861F6D70077E5F0 /* RootDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518C0D12861F6D70077E5F0 /* RootDependencyContainer.swift */; };
+		A518C0D42861F9E80077E5F0 /* @Resolve.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518C0D32861F9E80077E5F0 /* @Resolve.swift */; };
 		A5537E672860358300FE7027 /* PullgoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5537E662860358300FE7027 /* PullgoApp.swift */; };
 		A5537E692860358300FE7027 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5537E682860358300FE7027 /* LaunchView.swift */; };
 		A5537E6B2860358300FE7027 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5537E6A2860358300FE7027 /* Assets.xcassets */; };
@@ -105,6 +108,9 @@
 /* Begin PBXFileReference section */
 		A501B8372861BF060074384A /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		A518C0CC2861F3840077E5F0 /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
+		A518C0CF2861F5A70077E5F0 /* DependencyContainer+Factory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DependencyContainer+Factory.swift"; sourceTree = "<group>"; };
+		A518C0D12861F6D70077E5F0 /* RootDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootDependencyContainer.swift; sourceTree = "<group>"; };
+		A518C0D32861F9E80077E5F0 /* @Resolve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "@Resolve.swift"; sourceTree = "<group>"; };
 		A5537E632860358300FE7027 /* Pullgo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pullgo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5537E662860358300FE7027 /* PullgoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullgoApp.swift; sourceTree = "<group>"; };
 		A5537E682860358300FE7027 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
@@ -209,6 +215,16 @@
 			path = Launch;
 			sourceTree = "<group>";
 		};
+		A518C0CE2861F59E0077E5F0 /* Dependency */ = {
+			isa = PBXGroup;
+			children = (
+				A518C0CF2861F5A70077E5F0 /* DependencyContainer+Factory.swift */,
+				A518C0D12861F6D70077E5F0 /* RootDependencyContainer.swift */,
+				A518C0D32861F9E80077E5F0 /* @Resolve.swift */,
+			);
+			path = Dependency;
+			sourceTree = "<group>";
+		};
 		A5537E5A2860358300FE7027 = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +255,7 @@
 		A5537E652860358300FE7027 /* Pullgo */ = {
 			isa = PBXGroup;
 			children = (
+				A518C0CE2861F59E0077E5F0 /* Dependency */,
 				A501B8362861BD7F0074384A /* App */,
 				A5537E6A2860358300FE7027 /* Assets.xcassets */,
 				A5537E6C2860358300FE7027 /* Preview Content */,
@@ -642,10 +659,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5537E692860358300FE7027 /* LaunchView.swift in Sources */,
+				A518C0D42861F9E80077E5F0 /* @Resolve.swift in Sources */,
 				A5537EB728603A9700FE7027 /* Logger.swift in Sources */,
 				A5537E672860358300FE7027 /* PullgoApp.swift in Sources */,
 				A518C0CD2861F3840077E5F0 /* LaunchViewModel.swift in Sources */,
+				A518C0D02861F5A70077E5F0 /* DependencyContainer+Factory.swift in Sources */,
 				A501B8382861BF060074384A /* AppState.swift in Sources */,
+				A518C0D22861F6D70077E5F0 /* RootDependencyContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
