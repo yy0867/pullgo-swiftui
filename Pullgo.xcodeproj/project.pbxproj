@@ -14,7 +14,6 @@
 		A5537E7C2860369400FE7027 /* PullgoKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A5537E7B2860369400FE7027 /* PullgoKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A5537E7F2860369400FE7027 /* PullgoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5537E792860369400FE7027 /* PullgoKit.framework */; };
 		A5537E802860369400FE7027 /* PullgoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A5537E792860369400FE7027 /* PullgoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A5537E8C286036AB00FE7027 /* PullgoKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5537E8B286036AB00FE7027 /* PullgoKitTests.swift */; };
 		A5537E8D286036AB00FE7027 /* PullgoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5537E792860369400FE7027 /* PullgoKit.framework */; };
 		A5537E9A286036C100FE7027 /* PullgoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5537E99286036C100FE7027 /* PullgoTests.swift */; };
 		A5537EA82860387500FE7027 /* NetworkKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A5537EA72860387500FE7027 /* NetworkKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -41,6 +40,10 @@
 		A5D88E9F28618A9E00DCB623 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88E9E28618A9E00DCB623 /* HTTPMethod.swift */; };
 		A5D88EA32861936600DCB623 /* UserSessionRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EA22861936600DCB623 /* UserSessionRepositoryProtocol.swift */; };
 		A5D88EA5286193FE00DCB623 /* UserSessionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EA4286193FE00DCB623 /* UserSessionRepository.swift */; };
+		A5D88EAB286194EF00DCB623 /* UserSessionRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EAA286194EF00DCB623 /* UserSessionRepositoryTests.swift */; };
+		A5D88EAE2861950100DCB623 /* TestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EAD2861950100DCB623 /* TestExtension.swift */; };
+		A5D88EB02861951E00DCB623 /* TestInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EAF2861951E00DCB623 /* TestInstance.swift */; };
+		A5D88EB4286195C900DCB623 /* TestUserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EB3286195C900DCB623 /* TestUserSession.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,7 +109,6 @@
 		A5537E792860369400FE7027 /* PullgoKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PullgoKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5537E7B2860369400FE7027 /* PullgoKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PullgoKit.h; sourceTree = "<group>"; };
 		A5537E89286036AB00FE7027 /* PullgoKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PullgoKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A5537E8B286036AB00FE7027 /* PullgoKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullgoKitTests.swift; sourceTree = "<group>"; };
 		A5537E97286036C100FE7027 /* PullgoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PullgoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5537E99286036C100FE7027 /* PullgoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullgoTests.swift; sourceTree = "<group>"; };
 		A5537EA52860387500FE7027 /* NetworkKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetworkKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,6 +130,10 @@
 		A5D88E9E28618A9E00DCB623 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		A5D88EA22861936600DCB623 /* UserSessionRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionRepositoryProtocol.swift; sourceTree = "<group>"; };
 		A5D88EA4286193FE00DCB623 /* UserSessionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionRepository.swift; sourceTree = "<group>"; };
+		A5D88EAA286194EF00DCB623 /* UserSessionRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionRepositoryTests.swift; sourceTree = "<group>"; };
+		A5D88EAD2861950100DCB623 /* TestExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExtension.swift; sourceTree = "<group>"; };
+		A5D88EAF2861951E00DCB623 /* TestInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestInstance.swift; sourceTree = "<group>"; };
+		A5D88EB3286195C900DCB623 /* TestUserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUserSession.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,7 +246,8 @@
 		A5537E8A286036AB00FE7027 /* PullgoKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				A5537E8B286036AB00FE7027 /* PullgoKitTests.swift */,
+				A5D88EAC286194F600DCB623 /* TestExtensions */,
+				A5D88EA6286194C900DCB623 /* RepositoryTests */,
 			);
 			path = PullgoKitTests;
 			sourceTree = "<group>";
@@ -326,6 +333,40 @@
 				A5D88EA4286193FE00DCB623 /* UserSessionRepository.swift */,
 			);
 			path = UserSession;
+			sourceTree = "<group>";
+		};
+		A5D88EA6286194C900DCB623 /* RepositoryTests */ = {
+			isa = PBXGroup;
+			children = (
+				A5D88EAA286194EF00DCB623 /* UserSessionRepositoryTests.swift */,
+			);
+			path = RepositoryTests;
+			sourceTree = "<group>";
+		};
+		A5D88EAC286194F600DCB623 /* TestExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				A5D88EB2286195B700DCB623 /* Instances */,
+				A5D88EAD2861950100DCB623 /* TestExtension.swift */,
+			);
+			path = TestExtensions;
+			sourceTree = "<group>";
+		};
+		A5D88EB1286195B100DCB623 /* UserSession */ = {
+			isa = PBXGroup;
+			children = (
+				A5D88EB3286195C900DCB623 /* TestUserSession.swift */,
+			);
+			path = UserSession;
+			sourceTree = "<group>";
+		};
+		A5D88EB2286195B700DCB623 /* Instances */ = {
+			isa = PBXGroup;
+			children = (
+				A5D88EAF2861951E00DCB623 /* TestInstance.swift */,
+				A5D88EB1286195B100DCB623 /* UserSession */,
+			);
+			path = Instances;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -487,6 +528,7 @@
 					};
 					A5537E88286036AB00FE7027 = {
 						CreatedOnToolsVersion = 13.3;
+						LastSwiftMigration = 1330;
 					};
 					A5537E96286036C100FE7027 = {
 						CreatedOnToolsVersion = 13.3;
@@ -606,7 +648,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5537E8C286036AB00FE7027 /* PullgoKitTests.swift in Sources */,
+				A5D88EAB286194EF00DCB623 /* UserSessionRepositoryTests.swift in Sources */,
+				A5D88EB02861951E00DCB623 /* TestInstance.swift in Sources */,
+				A5D88EAE2861950100DCB623 /* TestExtension.swift in Sources */,
+				A5D88EB4286195C900DCB623 /* TestUserSession.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -907,14 +952,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GTB6BR222W;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Harry.PullgoKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -924,10 +977,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GTB6BR222W;
 				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Harry.PullgoKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -944,6 +1003,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = GTB6BR222W;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Harry.PullgoTests;
