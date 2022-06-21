@@ -36,7 +36,6 @@
 		A5A37EDF286044F0007192BC /* Teacher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A37ED9286044F0007192BC /* Teacher.swift */; };
 		A5A37EE0286044F0007192BC /* Account+Credential.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A37EDA286044F0007192BC /* Account+Credential.swift */; };
 		A5A37EE1286044F0007192BC /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A37EDB286044F0007192BC /* Student.swift */; };
-		A5A37EE2286044F0007192BC /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A37EDC286044F0007192BC /* Endpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,7 +118,6 @@
 		A5A37ED9286044F0007192BC /* Teacher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Teacher.swift; sourceTree = "<group>"; };
 		A5A37EDA286044F0007192BC /* Account+Credential.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Account+Credential.swift"; sourceTree = "<group>"; };
 		A5A37EDB286044F0007192BC /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
-		A5A37EDC286044F0007192BC /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,7 +277,6 @@
 				A5A37ED9286044F0007192BC /* Teacher.swift */,
 				A5A37EDA286044F0007192BC /* Account+Credential.swift */,
 				A5A37EDB286044F0007192BC /* Student.swift */,
-				A5A37EDC286044F0007192BC /* Endpoint.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -543,7 +540,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5A37EE2286044F0007192BC /* Endpoint.swift in Sources */,
 				A5A37EDF286044F0007192BC /* Teacher.swift in Sources */,
 				A5A37EE1286044F0007192BC /* Student.swift in Sources */,
 				A5A37EDE286044F0007192BC /* UserSession.swift in Sources */,
