@@ -19,3 +19,14 @@ public struct Credential: Encodable {
 
 extension Account: Equatable {}
 extension Credential: Equatable {}
+
+extension Account {
+    public static func stub(
+        username: String = "username",
+        fullName: String = "fullName",
+        phone: String = "01012345678",
+        password: String? = nil
+    ) -> Account {
+        return Account(username: username, fullName: fullName, phone: phone, password: password)
+    }
+}

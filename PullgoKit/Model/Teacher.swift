@@ -11,3 +11,9 @@ public struct Teacher: Codable {
 }
 
 extension Teacher: Identifiable, Equatable {}
+
+extension Teacher {
+    public static func stub(id: Int? = nil, account: Account) -> Teacher {
+        return Teacher(id: id, account: account)
+    }
+}

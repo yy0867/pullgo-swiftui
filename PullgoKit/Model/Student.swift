@@ -14,3 +14,21 @@ public struct Student: Codable {
 }
 
 extension Student: Identifiable, Equatable {}
+
+extension Student {
+    public static func stub(
+        id: Int? = nil,
+        account: Account,
+        parentPhone: String = "01012345678",
+        schoolName: String = "school_name",
+        schoolYear: Int = 1
+    ) -> Student {
+        return Student(
+            id: id,
+            account: account,
+            parentPhone: parentPhone,
+            schoolName: schoolName,
+            schoolYear: schoolYear
+        )
+    }
+}
