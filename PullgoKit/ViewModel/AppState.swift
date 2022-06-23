@@ -7,19 +7,18 @@
 
 import Foundation
 import Combine
-import PullgoKit
 
-enum AppState {
+public enum AppState {
     case launching(LaunchState)
     case running(AuthenticationState)
 }
 
-enum LaunchState {
+public enum LaunchState {
     case starting
     case loadUserSession(AnyCancellable)
 }
 
-enum AuthenticationState {
+public enum AuthenticationState {
     case authenticated(UserSession)
     case notAuthenticated
 }

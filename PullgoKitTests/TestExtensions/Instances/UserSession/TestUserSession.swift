@@ -73,15 +73,15 @@ class TestUserSessionDataStore: UserSessionDataStoreProtocol {
     /// `Student`를 담고 있는 `UserSession`를 반환합니다.
     /// - Returns: 성공 시 `TestUserSession.fakeStudent`로 구성된 `UserSession`
     func rememberMe() -> AnyPublisher<UserSession?, Never> {
-        if !isSucceedCase {
-            // nil 반환
-            return Just(nil)
-                .eraseToAnyPublisher()
-        } else {
-            // fakeStudent 반환
-            return Just(UserSession(token: "token", student: fakeStudent, teacher: nil))
-                .eraseToAnyPublisher()
+        
+        return Future<UserSession?, Never> { [weak self] promise in
+            DispatchQueue.main.asyncAfter(deadline: .now()) {
+                let result: Result<UserSession?, Never> = self!.isSucceedCase ?
+                    .success(UserSession(token: "token", student: self!.fakeStudent, teacher: nil)) : .success(nil)
+                promise(result)
+            }
         }
+        .eraseToAnyPublisher()
     }
     
     func signUp(student: Student) -> AnyPublisher<Student, Error> {

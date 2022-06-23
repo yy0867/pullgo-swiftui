@@ -12,3 +12,13 @@ public struct UserSession: Codable {
 }
 
 extension UserSession: Equatable {}
+
+extension UserSession {
+    public static func stub(
+        token: String?,
+        student: Student? = nil,
+        teacher: Teacher? = nil
+    ) -> UserSession {
+        return UserSession(token: token, student: student, teacher: teacher)
+    }
+}

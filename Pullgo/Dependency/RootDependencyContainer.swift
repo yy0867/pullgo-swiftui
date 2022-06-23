@@ -30,4 +30,8 @@ final class RootDependencyContainer: DependencyContainer {
         
         return dependency
     }
+    
+    func resolve<T>(type: T.Type) -> T {
+        return resolve()
+    }
 }

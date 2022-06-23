@@ -15,6 +15,8 @@ public final class UserSessionDataStore: UserSessionDataStoreProtocol {
     // MARK: - Properties
     
     // MARK: - Methods
+    public init() {}
+    
     public func signIn(credential: Credential) -> AnyPublisher<UserSession, Error> {
         var endpoint = Endpoint(httpMethod: .post, paths: ["auth", "token"])
         endpoint.setHTTPBody(credential)
@@ -27,8 +29,13 @@ public final class UserSessionDataStore: UserSessionDataStoreProtocol {
     public func rememberMe() -> AnyPublisher<UserSession?, Never> {
         let tokenManager = KeychainTokenManager()
         guard let token = tokenManager.readToken() else {
-            return Result.Publisher(nil)
-                .eraseToAnyPublisher()
+            return Future<UserSession?, Never> { promise in
+                DispatchQueue.main.asyncAfter(deadline: .now()) {
+                    let result: Result<UserSession?, Never> = .success(nil)
+                    promise(result)
+                }
+            }
+            .eraseToAnyPublisher()
         }
         
         var endpoint = Endpoint(paths: ["auth", "me"])
