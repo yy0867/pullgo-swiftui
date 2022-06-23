@@ -19,11 +19,9 @@ struct LaunchView: View {
     func contentView() -> AnyView {
         switch viewModel.appState {
             case .launching:
-                // Navigate to LaunchView
-                return AnyView(Text("present launch view"))
+                return AnyView(Text("present launch screen"))
             case .running(let authenticationState):
-                // Navigate to RunningView
-                return AnyView(Text("running app"))
+                return AnyView(RunningView(authenticationState: authenticationState))
         }
     }
 }
