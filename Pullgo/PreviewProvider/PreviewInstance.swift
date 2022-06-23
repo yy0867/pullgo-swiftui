@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PullgoKit
 
 extension PreviewProvider {
     static var dev: PreviewInstance {
@@ -17,4 +18,21 @@ struct PreviewInstance {
     
     static let shared = PreviewInstance()
     private init() {}
+    
+    // MARK: - Properties
+    let studentUserSession = UserSession.stub(
+        token: "token",
+        student: Student.stub(
+            id: 1,
+            account: Account.stub()
+        )
+    )
+    
+    let teacherUserSession = UserSession.stub(
+        token: "token",
+        teacher: Teacher.stub(
+            id: 1,
+            account: Account.stub()
+        )
+    )
 }
