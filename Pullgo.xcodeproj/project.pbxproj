@@ -45,6 +45,9 @@
 		A5A37EE728604666007192BC /* UserSessionDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5A37EE628604666007192BC /* UserSessionDataStore.swift */; };
 		A5D30535286437A600FDEA6F /* RunningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D30534286437A600FDEA6F /* RunningView.swift */; };
 		A5D305382864413100FDEA6F /* LaunchViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D305372864413100FDEA6F /* LaunchViewModelTests.swift */; };
+		A5D3053C2864494700FDEA6F /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D3053B2864494700FDEA6F /* OnboardingViewModel.swift */; };
+		A5D3053E28644A4B00FDEA6F /* UserSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D3053D28644A4B00FDEA6F /* UserSessionDelegate.swift */; };
+		A5D30541286450C900FDEA6F /* OnboardingViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D30540286450C900FDEA6F /* OnboardingViewModelTests.swift */; };
 		A5D88E9C2861890400DCB623 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88E9B2861890400DCB623 /* Endpoint.swift */; };
 		A5D88E9F28618A9E00DCB623 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88E9E28618A9E00DCB623 /* HTTPMethod.swift */; };
 		A5D88EA32861936600DCB623 /* UserSessionRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5D88EA22861936600DCB623 /* UserSessionRepositoryProtocol.swift */; };
@@ -144,6 +147,9 @@
 		A5A37EE628604666007192BC /* UserSessionDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionDataStore.swift; sourceTree = "<group>"; };
 		A5D30534286437A600FDEA6F /* RunningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningView.swift; sourceTree = "<group>"; };
 		A5D305372864413100FDEA6F /* LaunchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModelTests.swift; sourceTree = "<group>"; };
+		A5D3053B2864494700FDEA6F /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		A5D3053D28644A4B00FDEA6F /* UserSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionDelegate.swift; sourceTree = "<group>"; };
+		A5D30540286450C900FDEA6F /* OnboardingViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModelTests.swift; sourceTree = "<group>"; };
 		A5D88E9B2861890400DCB623 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		A5D88E9E28618A9E00DCB623 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		A5D88EA22861936600DCB623 /* UserSessionRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionRepositoryProtocol.swift; sourceTree = "<group>"; };
@@ -237,6 +243,8 @@
 			children = (
 				A501B8372861BF060074384A /* AppState.swift */,
 				A518C0CC2861F3840077E5F0 /* LaunchViewModel.swift */,
+				A5D3053D28644A4B00FDEA6F /* UserSessionDelegate.swift */,
+				A5D3053A2864493B00FDEA6F /* Onboarding */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -396,8 +404,17 @@
 			isa = PBXGroup;
 			children = (
 				A5D305372864413100FDEA6F /* LaunchViewModelTests.swift */,
+				A5D30540286450C900FDEA6F /* OnboardingViewModelTests.swift */,
 			);
 			path = ViewModelTests;
+			sourceTree = "<group>";
+		};
+		A5D3053A2864493B00FDEA6F /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				A5D3053B2864494700FDEA6F /* OnboardingViewModel.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		A5D88E9D28618A9500DCB623 /* Endpoint */ = {
@@ -728,6 +745,7 @@
 			files = (
 				A5A37EE728604666007192BC /* UserSessionDataStore.swift in Sources */,
 				A5D88EA5286193FE00DCB623 /* UserSessionRepository.swift in Sources */,
+				A5D3053E28644A4B00FDEA6F /* UserSessionDelegate.swift in Sources */,
 				A5A37EE52860456D007192BC /* UserSessionDataStoreProtocol.swift in Sources */,
 				A5A37EDF286044F0007192BC /* Teacher.swift in Sources */,
 				A5D88EA32861936600DCB623 /* UserSessionRepositoryProtocol.swift in Sources */,
@@ -736,6 +754,7 @@
 				A5A37EDE286044F0007192BC /* UserSession.swift in Sources */,
 				A5A37EE0286044F0007192BC /* Account+Credential.swift in Sources */,
 				A518C0DA286201A20077E5F0 /* AppState.swift in Sources */,
+				A5D3053C2864494700FDEA6F /* OnboardingViewModel.swift in Sources */,
 				A5D88E9C2861890400DCB623 /* Endpoint.swift in Sources */,
 				A5537EB628603A9600FE7027 /* Logger.swift in Sources */,
 				A5D88E9F28618A9E00DCB623 /* HTTPMethod.swift in Sources */,
@@ -752,6 +771,7 @@
 				A5D88EB02861951E00DCB623 /* TestInstance.swift in Sources */,
 				A5D88EAE2861950100DCB623 /* TestExtension.swift in Sources */,
 				A5D88EB4286195C900DCB623 /* TestUserSession.swift in Sources */,
+				A5D30541286450C900FDEA6F /* OnboardingViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
