@@ -35,3 +35,13 @@ public final class LaunchViewModel: ObservableObject {
         appState = .launching(.loadUserSession(cancellable))
     }
 }
+
+extension LaunchViewModel: UserSessionDelegate {
+    public func signedIn(by userSession: UserSession) {
+        appState = .running(.authenticated(userSession))
+    }
+    
+    public func signOut() {
+        appState = .running(.notAuthenticated)
+    }
+}

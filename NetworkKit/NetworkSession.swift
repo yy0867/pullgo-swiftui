@@ -15,7 +15,7 @@ public final class NetworkSession {
     private init() {}
     
     public func request(_ urlRequest: URLRequest) -> AnyPublisher<Data, Error> {
-        Log.print("request url - \(urlRequest.url?.absoluteString ?? "nil.")")
+        Log.print("\(urlRequest.httpMethod ?? "No Method") request - \(urlRequest.url?.absoluteString ?? "nil.")")
         
         return URLSession.shared.dataTaskPublisher(for: urlRequest)
             .tryMap { output -> Data in
@@ -29,6 +29,7 @@ public final class NetworkSession {
                 }
                 return output.data
             }
+            .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
     
