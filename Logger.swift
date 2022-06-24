@@ -13,6 +13,7 @@ public final class Log {
     private static let logger = Logger()
     
     static func print(_ message: String, level: OSLogType = .default) {
+        Swift.print(message)
         logger.log(level: level, "\(message)")
     }
 }
