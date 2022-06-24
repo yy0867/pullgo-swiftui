@@ -10,7 +10,7 @@ import Combine
 
 public final class OnboardingViewModel: ObservableObject {
     
-    enum SigningState {
+    public enum SigningState {
         case invalid
         case valid
         case signing
@@ -18,15 +18,15 @@ public final class OnboardingViewModel: ObservableObject {
         case failed(FailedReason)
     }
     
-    enum FailedReason {
+    public enum FailedReason {
         case accountNotExists
         case errorDetected
     }
     
     // MARK: - Properties
-    @Published var username: String = ""
-    @Published var password: String = ""
-    @Published private(set) var signingState: SigningState = .invalid
+    @Published public var username: String = ""
+    @Published public var password: String = ""
+    @Published public private(set) var signingState: SigningState = .invalid
     
     private let userSessionRepository: UserSessionRepositoryProtocol
     private weak var userSessionDelegate: UserSessionDelegate?
