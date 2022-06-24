@@ -10,8 +10,10 @@ import PullgoKit
 
 struct RunningView: View {
     
+    // MARK: - Properties
     let authenticationState: AuthenticationState
     
+    // MARK: - UI
     var body: some View {
         contentView()
     }

@@ -10,8 +10,14 @@ import PullgoKit
 
 struct LaunchView: View {
     
-    @EnvironmentObject private var viewModel: LaunchViewModel
+    // MARK: - Properties
+    @StateObject private var viewModel: LaunchViewModel
     
+    init(viewModel: LaunchViewModel) {
+        self._viewModel = .init(wrappedValue: viewModel)
+    }
+    
+    // MARK: - UI
     var body: some View {        
         contentView()
     }
@@ -28,7 +34,6 @@ struct LaunchView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        LaunchView()
-            .environmentObject(dev.getLaunchViewModel())
+        LaunchView(viewModel: dev.getLaunchViewModel())
     }
 }

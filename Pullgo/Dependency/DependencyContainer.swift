@@ -6,16 +6,35 @@
 //
 
 import Foundation
+import PullgoKit
+import SwiftUI
 
-protocol DependencyContainer {
-    var dependencies: [String: Any] { get set }
+final class DependencyConatiner {
     
-    func register<T>(type: T.Type, _ dependency: (Self) -> T)
-    func resolve<T>() -> T
-}
-
-extension DependencyContainer {
-    func getKey<T>(of dependencyType: T.Type) -> String {
-        return String(describing: dependencyType.self)
+    // MARK: - Long Lived
+    let userSessionRepository: UserSessionRepositoryProtocol
+    
+    init() {
+        // User Session
+        func makeUserSessionRepository() -> UserSessionRepositoryProtocol {
+            let dataStore = makeUserSessionDataStore()
+            return UserSessionRepository(dataStore: dataStore)
+        }
+        
+        func makeUserSessionDataStore() -> UserSessionDataStoreProtocol {
+            return UserSessionDataStore()
+        }
+        
+        self.userSessionRepository = makeUserSessionRepository()
+    }
+    
+    // MARK: - Factories
+    func makeLaunchView() -> some View {
+        let viewModel = makeLaunchViewModel()
+        return LaunchView(viewModel: viewModel)
+    }
+    
+    func makeLaunchViewModel() -> LaunchViewModel {
+        return LaunchViewModel(userSessionRepository: userSessionRepository)
     }
 }

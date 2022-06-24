@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A518C0D02861F5A70077E5F0 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518C0CF2861F5A70077E5F0 /* DependencyContainer.swift */; };
-		A518C0D22861F6D70077E5F0 /* RootDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518C0D12861F6D70077E5F0 /* RootDependencyContainer.swift */; };
-		A518C0D42861F9E80077E5F0 /* @Resolve.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518C0D32861F9E80077E5F0 /* @Resolve.swift */; };
 		A518C0D9286201840077E5F0 /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518C0CC2861F3840077E5F0 /* LaunchViewModel.swift */; };
 		A518C0DA286201A20077E5F0 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A501B8372861BF060074384A /* AppState.swift */; };
 		A518C0DF28620CAB0077E5F0 /* PreviewInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518C0DE28620CAB0077E5F0 /* PreviewInstance.swift */; };
@@ -116,8 +114,6 @@
 		A501B8372861BF060074384A /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		A518C0CC2861F3840077E5F0 /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
 		A518C0CF2861F5A70077E5F0 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
-		A518C0D12861F6D70077E5F0 /* RootDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootDependencyContainer.swift; sourceTree = "<group>"; };
-		A518C0D32861F9E80077E5F0 /* @Resolve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "@Resolve.swift"; sourceTree = "<group>"; };
 		A518C0DE28620CAB0077E5F0 /* PreviewInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewInstance.swift; sourceTree = "<group>"; };
 		A518C0E128620D1E0077E5F0 /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
 		A5537E632860358300FE7027 /* Pullgo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pullgo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -232,8 +228,6 @@
 			isa = PBXGroup;
 			children = (
 				A518C0CF2861F5A70077E5F0 /* DependencyContainer.swift */,
-				A518C0D12861F6D70077E5F0 /* RootDependencyContainer.swift */,
-				A518C0D32861F9E80077E5F0 /* @Resolve.swift */,
 			);
 			path = Dependency;
 			sourceTree = "<group>";
@@ -728,11 +722,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5537E692860358300FE7027 /* LaunchView.swift in Sources */,
-				A518C0D42861F9E80077E5F0 /* @Resolve.swift in Sources */,
 				A5537EB728603A9700FE7027 /* Logger.swift in Sources */,
 				A5537E672860358300FE7027 /* PullgoApp.swift in Sources */,
 				A518C0D02861F5A70077E5F0 /* DependencyContainer.swift in Sources */,
-				A518C0D22861F6D70077E5F0 /* RootDependencyContainer.swift in Sources */,
 				A518C0DF28620CAB0077E5F0 /* PreviewInstance.swift in Sources */,
 				A5D30535286437A600FDEA6F /* RunningView.swift in Sources */,
 				A518C0E228620D1E0077E5F0 /* LaunchViewModel.swift in Sources */,
