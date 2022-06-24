@@ -38,7 +38,9 @@ struct Endpoint {
         for path in paths { url.appendPathComponent(path) }
         
         var urlComponents = URLComponents(string: url.absoluteString)!
-        urlComponents.queryItems = queries
+        if !queries.isEmpty {
+            urlComponents.queryItems = queries
+        }
         
         var urlRequest = URLRequest(url: urlComponents.url!)
         urlRequest.httpMethod = httpMethod.rawValue
