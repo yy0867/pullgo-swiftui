@@ -29,6 +29,7 @@
 		A5537EB528603A3000FE7027 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5537EB428603A3000FE7027 /* Logger.swift */; };
 		A5537EB628603A9600FE7027 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5537EB428603A3000FE7027 /* Logger.swift */; };
 		A5537EB728603A9700FE7027 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5537EB428603A3000FE7027 /* Logger.swift */; };
+		A5556BC628658AE900B9438A /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5556BC528658AE900B9438A /* OnboardingView.swift */; };
 		A5A37EC828603FAC007192BC /* TokenKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A5A37EC728603FAC007192BC /* TokenKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A5A37ECB28603FAC007192BC /* TokenKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A37EC528603FAC007192BC /* TokenKit.framework */; };
 		A5A37ECC28603FAC007192BC /* TokenKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A5A37EC528603FAC007192BC /* TokenKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -131,6 +132,7 @@
 		A5537EB02860388B00FE7027 /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
 		A5537EB22860398000FE7027 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		A5537EB428603A3000FE7027 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		A5556BC528658AE900B9438A /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		A5A37EC528603FAC007192BC /* TokenKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TokenKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5A37EC728603FAC007192BC /* TokenKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TokenKit.h; sourceTree = "<group>"; };
 		A5A37ED028604092007192BC /* KeychainTokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainTokenManager.swift; sourceTree = "<group>"; };
@@ -347,6 +349,14 @@
 			path = NetworkKit;
 			sourceTree = "<group>";
 		};
+		A5556BC428658ADF00B9438A /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				A5556BC528658AE900B9438A /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		A5A37EC628603FAC007192BC /* TokenKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -390,6 +400,7 @@
 			isa = PBXGroup;
 			children = (
 				A5D30534286437A600FDEA6F /* RunningView.swift */,
+				A5556BC428658ADF00B9438A /* Onboarding */,
 			);
 			path = Running;
 			sourceTree = "<group>";
@@ -726,6 +737,7 @@
 				A5537E672860358300FE7027 /* PullgoApp.swift in Sources */,
 				A518C0D02861F5A70077E5F0 /* DependencyContainer.swift in Sources */,
 				A518C0DF28620CAB0077E5F0 /* PreviewInstance.swift in Sources */,
+				A5556BC628658AE900B9438A /* OnboardingView.swift in Sources */,
 				A5D30535286437A600FDEA6F /* RunningView.swift in Sources */,
 				A518C0E228620D1E0077E5F0 /* LaunchViewModel.swift in Sources */,
 			);
