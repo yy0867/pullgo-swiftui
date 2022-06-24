@@ -29,6 +29,7 @@ public final class NetworkSession {
                 }
                 return output.data
             }
+            .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
     

@@ -43,6 +43,8 @@ public final class OnboardingViewModel: ObservableObject {
         observeCredentialForValidate()
     }
     
+    var cancellable: AnyCancellable?
+    
     public func signIn() {
         guard case .valid = signingState else {
             Log.print("SigningState must set to valid.")
@@ -50,7 +52,7 @@ public final class OnboardingViewModel: ObservableObject {
         }
         
         let credential = Credential(username: username, password: password)
-        let _ = userSessionRepository.signIn(credential: credential)
+        cancellable = userSessionRepository.signIn(credential: credential)
             .sink(receiveCompletion: signInCompletion, receiveValue: signInSuccess)
     }
     

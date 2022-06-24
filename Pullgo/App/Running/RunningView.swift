@@ -11,7 +11,13 @@ import PullgoKit
 struct RunningView: View {
     
     // MARK: - Properties
-    let authenticationState: AuthenticationState
+    @Binding var authenticationState: AuthenticationState
+    let onboardingView: OnboardingView
+    
+    init(authenticationState: Binding<AuthenticationState>, onboardingView: OnboardingView) {
+        self._authenticationState = authenticationState
+        self.onboardingView = onboardingView
+    }
     
     // MARK: - UI
     var body: some View {
@@ -24,20 +30,32 @@ struct RunningView: View {
                 // present view of teacher / student
                 return AnyView(Text("present signed in view"))
             case .notAuthenticated:
-                // present onboarding
-                return AnyView(Text("present onboarding"))
+                return AnyView(onboardingView)
         }
     }
+}
+
+protocol RunningViewFactory {
+    func makeRunningView(authenticationState: Binding<AuthenticationState>) -> RunningView
 }
 
 struct RunningView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            RunningView(authenticationState: .notAuthenticated)
+            RunningView(
+                authenticationState: .constant(.notAuthenticated),
+                onboardingView: dev.getOnboardingView()
+            )
             
-            RunningView(authenticationState: .authenticated(dev.studentUserSession))
+            RunningView(
+                authenticationState: .constant(.authenticated(dev.studentUserSession)),
+                onboardingView: dev.getOnboardingView()
+            )
             
-            RunningView(authenticationState: .authenticated(dev.teacherUserSession))
+            RunningView(
+                authenticationState: .constant(.authenticated(dev.teacherUserSession)),
+                onboardingView: dev.getOnboardingView()
+            )
         }
     }
 }

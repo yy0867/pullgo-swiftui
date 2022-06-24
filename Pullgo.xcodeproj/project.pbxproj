@@ -11,7 +11,7 @@
 		A518C0D9286201840077E5F0 /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518C0CC2861F3840077E5F0 /* LaunchViewModel.swift */; };
 		A518C0DA286201A20077E5F0 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A501B8372861BF060074384A /* AppState.swift */; };
 		A518C0DF28620CAB0077E5F0 /* PreviewInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518C0DE28620CAB0077E5F0 /* PreviewInstance.swift */; };
-		A518C0E228620D1E0077E5F0 /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518C0E128620D1E0077E5F0 /* LaunchViewModel.swift */; };
+		A518C0E228620D1E0077E5F0 /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518C0E128620D1E0077E5F0 /* Launch.swift */; };
 		A5537E672860358300FE7027 /* PullgoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5537E662860358300FE7027 /* PullgoApp.swift */; };
 		A5537E692860358300FE7027 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5537E682860358300FE7027 /* LaunchView.swift */; };
 		A5537E6B2860358300FE7027 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5537E6A2860358300FE7027 /* Assets.xcassets */; };
@@ -30,6 +30,8 @@
 		A5537EB628603A9600FE7027 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5537EB428603A3000FE7027 /* Logger.swift */; };
 		A5537EB728603A9700FE7027 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5537EB428603A3000FE7027 /* Logger.swift */; };
 		A5556BC628658AE900B9438A /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5556BC528658AE900B9438A /* OnboardingView.swift */; };
+		A5556BCA28658B5A00B9438A /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5556BC928658B5A00B9438A /* Onboarding.swift */; };
+		A5556BD22865A39300B9438A /* Running.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5556BD12865A39300B9438A /* Running.swift */; };
 		A5A37EC828603FAC007192BC /* TokenKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A5A37EC728603FAC007192BC /* TokenKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A5A37ECB28603FAC007192BC /* TokenKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A37EC528603FAC007192BC /* TokenKit.framework */; };
 		A5A37ECC28603FAC007192BC /* TokenKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A5A37EC528603FAC007192BC /* TokenKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -116,7 +118,7 @@
 		A518C0CC2861F3840077E5F0 /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
 		A518C0CF2861F5A70077E5F0 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		A518C0DE28620CAB0077E5F0 /* PreviewInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewInstance.swift; sourceTree = "<group>"; };
-		A518C0E128620D1E0077E5F0 /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
+		A518C0E128620D1E0077E5F0 /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
 		A5537E632860358300FE7027 /* Pullgo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pullgo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5537E662860358300FE7027 /* PullgoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullgoApp.swift; sourceTree = "<group>"; };
 		A5537E682860358300FE7027 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
@@ -133,6 +135,8 @@
 		A5537EB22860398000FE7027 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		A5537EB428603A3000FE7027 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		A5556BC528658AE900B9438A /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		A5556BC928658B5A00B9438A /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		A5556BD12865A39300B9438A /* Running.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Running.swift; sourceTree = "<group>"; };
 		A5A37EC528603FAC007192BC /* TokenKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TokenKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5A37EC728603FAC007192BC /* TokenKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TokenKit.h; sourceTree = "<group>"; };
 		A5A37ED028604092007192BC /* KeychainTokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainTokenManager.swift; sourceTree = "<group>"; };
@@ -250,6 +254,7 @@
 			children = (
 				A518C0DE28620CAB0077E5F0 /* PreviewInstance.swift */,
 				A518C0E028620D180077E5F0 /* Launch */,
+				A5556BC728658B4B00B9438A /* Running */,
 			);
 			path = PreviewProvider;
 			sourceTree = "<group>";
@@ -257,7 +262,7 @@
 		A518C0E028620D180077E5F0 /* Launch */ = {
 			isa = PBXGroup;
 			children = (
-				A518C0E128620D1E0077E5F0 /* LaunchViewModel.swift */,
+				A518C0E128620D1E0077E5F0 /* Launch.swift */,
 			);
 			path = Launch;
 			sourceTree = "<group>";
@@ -353,6 +358,23 @@
 			isa = PBXGroup;
 			children = (
 				A5556BC528658AE900B9438A /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		A5556BC728658B4B00B9438A /* Running */ = {
+			isa = PBXGroup;
+			children = (
+				A5556BD12865A39300B9438A /* Running.swift */,
+				A5556BC828658B5100B9438A /* Onboarding */,
+			);
+			path = Running;
+			sourceTree = "<group>";
+		};
+		A5556BC828658B5100B9438A /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				A5556BC928658B5A00B9438A /* Onboarding.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -736,10 +758,12 @@
 				A5537EB728603A9700FE7027 /* Logger.swift in Sources */,
 				A5537E672860358300FE7027 /* PullgoApp.swift in Sources */,
 				A518C0D02861F5A70077E5F0 /* DependencyContainer.swift in Sources */,
+				A5556BCA28658B5A00B9438A /* Onboarding.swift in Sources */,
 				A518C0DF28620CAB0077E5F0 /* PreviewInstance.swift in Sources */,
 				A5556BC628658AE900B9438A /* OnboardingView.swift in Sources */,
+				A5556BD22865A39300B9438A /* Running.swift in Sources */,
 				A5D30535286437A600FDEA6F /* RunningView.swift in Sources */,
-				A518C0E228620D1E0077E5F0 /* LaunchViewModel.swift in Sources */,
+				A518C0E228620D1E0077E5F0 /* Launch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
