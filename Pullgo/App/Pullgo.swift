@@ -15,7 +15,7 @@ public final class Pullgo: ObservableObject, AlertPublishable {
     private var cancellable: AnyCancellable?
     private let userSessionRepository: UserSessionRepositoryProtocol
     @Published private(set) var appState: AppState = .launching(.starting)
-    @Published var alert: AlertPublisher = (false, nil)
+    @Published public var alert: AlertPublisher = (false, nil)
     
     // MARK: - Methods
     init(userSessionRepository: UserSessionRepositoryProtocol) {
