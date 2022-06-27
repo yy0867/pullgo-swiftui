@@ -9,7 +9,8 @@ import Foundation
 import Combine
 
 public protocol SignUpDataStoreProtocol {
-    func isExists(username: String) -> AnyPublisher<Exist, Error>
+    func isStudentExists(username: String) -> AnyPublisher<Exist, Error>
+    func isTeacherExists(username: String) -> AnyPublisher<Exist, Error>
     func signUp(student: Student) -> AnyPublisher<Student, Error>
     func signUp(teacher: Teacher) -> AnyPublisher<Teacher, Error>
 }
