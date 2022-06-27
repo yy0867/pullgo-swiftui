@@ -45,7 +45,7 @@ class SucceedUserSessionRepositoryTests: XCTestCase {
         
         // When
         var userSession: UserSession?
-        repository.signIn(credential: credential)
+        repository.signIn(username: credential.username, password: credential.password)
             .sink(
                 receiveCompletion: failWhenReceiveError,
                 receiveValue: { receivedUserSession in
@@ -67,7 +67,7 @@ class SucceedUserSessionRepositoryTests: XCTestCase {
         
         // When
         var userSession: UserSession?
-        repository.signIn(credential: credential)
+        repository.signIn(username: credential.username, password: credential.password)
             .sink(
                 receiveCompletion: failWhenReceiveError,
                 receiveValue: { receivedUserSession in
@@ -204,7 +204,7 @@ class FailUserSessionRepositoryTests: XCTestCase {
         
         // When
         var error: Error?
-        repository.signIn(credential: credential)
+        repository.signIn(username: credential.username, password: credential.password)
             .sink(
                 receiveCompletion: { completion in
                     switch completion {
@@ -236,7 +236,7 @@ class FailUserSessionRepositoryTests: XCTestCase {
         
         // When
         var error: Error?
-        repository.signIn(credential: credential)
+        repository.signIn(username: credential.username, password: credential.password)
             .sink(
                 receiveCompletion: { completion in
                     switch completion {
