@@ -7,7 +7,6 @@
 
 import Foundation
 import Combine
-import NetworkKit
 @testable import PullgoKit
 
 class TestUserSessionDataStore: UserSessionDataStoreProtocol {
@@ -55,7 +54,7 @@ class TestUserSessionDataStore: UserSessionDataStoreProtocol {
                     .eraseToAnyPublisher()
             } else {
                 // 로그인 실패 (401)
-                return Fail(error: NetworkError.invalidCode(code: 401))
+                return Fail(error: PullgoError.networkError(error: .invalidCode(code: 401)))
                     .eraseToAnyPublisher()
             }
         } else {
@@ -65,7 +64,7 @@ class TestUserSessionDataStore: UserSessionDataStoreProtocol {
                     .eraseToAnyPublisher()
             } else {
                 // 로그인 실패 (401)
-                return Fail(error: NetworkError.invalidCode(code: 401))
+                return Fail(error: PullgoError.networkError(error: .invalidCode(code: 401)))
                     .eraseToAnyPublisher()
             }
         }

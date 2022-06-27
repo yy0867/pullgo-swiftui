@@ -6,52 +6,65 @@
 //
 
 import SwiftUI
-import PullgoKit
 
 struct OnboardingView: View {
     
     // MARK: - Properties
-    @StateObject private var viewModel: OnboardingViewModel
+    @EnvironmentObject private var pullgo: Pullgo
+    @StateObject private var validator = Validator()
     
-    init(viewModel: OnboardingViewModel) {
-        self._viewModel = .init(wrappedValue: viewModel)
-    }
+    @State private var username: String = ""
+    @State private var password: String = ""
     
     // MARK: - UI
     var body: some View {
         VStack {
             Image(systemName: "photo")
                 .resizable()
-                .aspectRatio(contentMode: .fit)
+                .scaledToFit()
                 .frame(height: 100)
             
-            VStack {
+            VStack(spacing: 30) {
                 VStack(spacing: 10) {
-                    TextField("아이디를 입력해주세요.", text: $viewModel.username)
+                    TextField("아이디를 입력해주세요.", text: $username)
                         .textFieldStyle(.roundedBorder)
+                        .onChange(of: username) { newValue in
+                            validator.username = newValue
+                        }
                     
-                    SecureField("비밀번호를 입력해주세요.", text: $viewModel.password)
+                    SecureField("비밀번호를 입력해주세요.", text: $password)
                         .textFieldStyle(.roundedBorder)
+                        .onChange(of: password) { newValue in
+                            validator.password = newValue
+                        }
                 }
-                .padding()
-                
-                Button(action: viewModel.signIn) {
-                    switch viewModel.signingState {
-                        case .valid:
-                            Text("로그인")
-                        case .signing:
-                            ProgressView()
-                        default:
-                            Text("로그인")
-                    }
+
+                Button(action: signIn) {
+                    Text("로그인")
+                        .capsuleBackground()
                 }
+                .disabled(!validator.isValid)
             }
+            .padding()
+            
+            Spacer()
+            
+            Button("회원가입", action: {})
         }
+        .padding(.vertical, 30)
+        .onAlert($pullgo.alert)
+    }
+    
+    // MARK: - Methods
+    private func signIn() {
+        pullgo.signIn(username: username, password: password)
     }
 }
 
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingView(viewModel: dev.getOnboardingViewModel())
+        OnboardingView()
+            .environmentObject(dev.getPullgo())
+            .previewInterfaceOrientation(.portrait)
     }
 }

@@ -2,24 +2,24 @@
 //  RunningView.swift
 //  Pullgo
 //
-//  Created by 김세영 on 2022/06/23.
+//  Created by 김세영 on 2022/06/24.
 //
 
 import SwiftUI
-import PullgoKit
 
 struct RunningView: View {
     
-    // MARK: - Properties
-    @Binding var authenticationState: AuthenticationState
-    let onboardingView: OnboardingView
+    private let authenticationState: AuthenticationState
+    private let makeOnboardingView: () -> OnboardingView
     
-    init(authenticationState: Binding<AuthenticationState>, onboardingView: OnboardingView) {
-        self._authenticationState = authenticationState
-        self.onboardingView = onboardingView
+    init(
+        authenticationState: AuthenticationState,
+        onboardingViewFactory: @escaping () -> OnboardingView
+    ) {
+        self.authenticationState = authenticationState
+        self.makeOnboardingView = onboardingViewFactory
     }
     
-    // MARK: - UI
     var body: some View {
         contentView()
     }
@@ -27,35 +27,19 @@ struct RunningView: View {
     func contentView() -> AnyView {
         switch authenticationState {
             case .authenticated(let userSession):
-                // present view of teacher / student
-                return AnyView(Text("present signed in view"))
+                return AnyView(Text("Authenticated"))
             case .notAuthenticated:
+                let onboardingView = makeOnboardingView()
                 return AnyView(onboardingView)
         }
     }
 }
 
-protocol RunningViewFactory {
-    func makeRunningView(authenticationState: Binding<AuthenticationState>) -> RunningView
-}
-
-struct RunningView_Previews: PreviewProvider {
+struct Running_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            RunningView(
-                authenticationState: .constant(.notAuthenticated),
-                onboardingView: dev.getOnboardingView()
-            )
-            
-            RunningView(
-                authenticationState: .constant(.authenticated(dev.studentUserSession)),
-                onboardingView: dev.getOnboardingView()
-            )
-            
-            RunningView(
-                authenticationState: .constant(.authenticated(dev.teacherUserSession)),
-                onboardingView: dev.getOnboardingView()
-            )
-        }
+        RunningView(
+            authenticationState: .notAuthenticated,
+            onboardingViewFactory: dev.getOnboardingView
+        )
     }
 }

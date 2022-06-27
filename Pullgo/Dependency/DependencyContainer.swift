@@ -11,9 +11,11 @@ import SwiftUI
 
 final class DependencyConatiner {
     
+    typealias RunningViewFactory = (AuthenticationState) -> RunningView
+    
     // MARK: - Long Lived
     let userSessionRepository: UserSessionRepositoryProtocol
-    let launchViewModel: LaunchViewModel
+    @ObservedObject var pullgo: Pullgo
     
     init() {
         // User Session
@@ -26,52 +28,33 @@ final class DependencyConatiner {
             return UserSessionDataStore()
         }
         
-        // Launch
-        func makeLaunchViewModel(
-            userSessionRepository: UserSessionRepositoryProtocol
-        ) -> LaunchViewModel {
-            return LaunchViewModel(userSessionRepository: userSessionRepository)
-        }
-        
         self.userSessionRepository = makeUserSessionRepository()
-        self.launchViewModel = makeLaunchViewModel(userSessionRepository: userSessionRepository)
+        self._pullgo = .init(wrappedValue: Pullgo(
+            userSessionRepository: self.userSessionRepository
+        ))
     }
     
     // MARK: - Factories
-    // Launching
-    func makeLaunchView() -> some View {
-        let viewModel = makeLaunchViewModel()
-        return LaunchView(
-            viewModel: viewModel,
-            runningViewFactory: self
+    func makeRootView() -> RootView {
+        let launchView = makeLaunchView()
+        return RootView(
+            launchView: launchView,
+            runningViewFactory: makeRunningView
         )
     }
     
-    func makeLaunchViewModel() -> LaunchViewModel {
-        return LaunchViewModel(userSessionRepository: userSessionRepository)
+    func makeLaunchView() -> LaunchView {
+        return LaunchView()
     }
     
-    // Running
-    func makeRunningView(authenticationState: Binding<AuthenticationState>) -> RunningView {
-        let onboardingView = makeOnboardingView()
+    func makeRunningView(_ authenticationState: AuthenticationState) -> RunningView {
         return RunningView(
             authenticationState: authenticationState,
-            onboardingView: onboardingView
+            onboardingViewFactory: makeOnboardingView
         )
     }
     
-    // Onboarding
     func makeOnboardingView() -> OnboardingView {
-        let viewModel = makeOnboardingViewModel()
-        return OnboardingView(viewModel: viewModel)
-    }
-    
-    func makeOnboardingViewModel() -> OnboardingViewModel {
-        return OnboardingViewModel(
-            userSessionRepository: userSessionRepository,
-            userSessionDelegate: launchViewModel
-        )
+        return OnboardingView()
     }
 }
-
-extension DependencyConatiner: RunningViewFactory {}

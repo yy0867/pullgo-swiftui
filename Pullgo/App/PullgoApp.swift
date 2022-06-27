@@ -15,7 +15,8 @@ struct PullgoApp: App {
     
     var body: some Scene {
         WindowGroup {
-            container.makeLaunchView()
+            container.makeRootView()
+                .environmentObject(container.pullgo)
         }
     }
 }

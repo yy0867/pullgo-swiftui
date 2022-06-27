@@ -9,19 +9,7 @@ import Foundation
 import PullgoKit
 
 extension PreviewInstance {
-    func getOnboardingViewModel() -> OnboardingViewModel {
-        let userSessionDataStore = UserSessionDataStore()
-        let userSessionRepository = UserSessionRepository(dataStore: userSessionDataStore)
-        let userSessionDelegate = getLaunchViewModel()
-        
-        return OnboardingViewModel(
-            userSessionRepository: userSessionRepository,
-            userSessionDelegate: userSessionDelegate
-        )
-    }
-    
     func getOnboardingView() -> OnboardingView {
-        let viewModel = getOnboardingViewModel()
-        return OnboardingView(viewModel: viewModel)
+        return OnboardingView()
     }
 }
