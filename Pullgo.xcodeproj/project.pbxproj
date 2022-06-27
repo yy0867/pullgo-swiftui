@@ -10,6 +10,8 @@
 		A518C0D02861F5A70077E5F0 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518C0CF2861F5A70077E5F0 /* DependencyContainer.swift */; };
 		A518C0DF28620CAB0077E5F0 /* PreviewInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518C0DE28620CAB0077E5F0 /* PreviewInstance.swift */; };
 		A518C0E228620D1E0077E5F0 /* Root+Launching.swift in Sources */ = {isa = PBXBuildFile; fileRef = A518C0E128620D1E0077E5F0 /* Root+Launching.swift */; };
+		A526F26928696D50005DE191 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A526F26828696D50005DE191 /* SignUpViewModel.swift */; };
+		A526F26C286970DF005DE191 /* SignUpViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A526F26B286970DF005DE191 /* SignUpViewModelTests.swift */; };
 		A5537E672860358300FE7027 /* PullgoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5537E662860358300FE7027 /* PullgoApp.swift */; };
 		A5537E6B2860358300FE7027 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5537E6A2860358300FE7027 /* Assets.xcassets */; };
 		A5537E6E2860358300FE7027 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5537E6D2860358300FE7027 /* Preview Assets.xcassets */; };
@@ -122,6 +124,8 @@
 		A518C0CF2861F5A70077E5F0 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		A518C0DE28620CAB0077E5F0 /* PreviewInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewInstance.swift; sourceTree = "<group>"; };
 		A518C0E128620D1E0077E5F0 /* Root+Launching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Root+Launching.swift"; sourceTree = "<group>"; };
+		A526F26828696D50005DE191 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		A526F26B286970DF005DE191 /* SignUpViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModelTests.swift; sourceTree = "<group>"; };
 		A5537E632860358300FE7027 /* Pullgo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pullgo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5537E662860358300FE7027 /* PullgoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullgoApp.swift; sourceTree = "<group>"; };
 		A5537E6A2860358300FE7027 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -248,14 +252,6 @@
 			path = Dependency;
 			sourceTree = "<group>";
 		};
-		A518C0D8286201770077E5F0 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				A5D3053A2864493B00FDEA6F /* Onboarding */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		A518C0DD28620C930077E5F0 /* PreviewProvider */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +268,22 @@
 				A518C0E128620D1E0077E5F0 /* Root+Launching.swift */,
 			);
 			path = Launch;
+			sourceTree = "<group>";
+		};
+		A526F26728696D45005DE191 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A526F26828696D50005DE191 /* SignUpViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A526F26A286970CE005DE191 /* ViewModelTests */ = {
+			isa = PBXGroup;
+			children = (
+				A526F26B286970DF005DE191 /* SignUpViewModelTests.swift */,
+			);
+			path = ViewModelTests;
 			sourceTree = "<group>";
 		};
 		A5537E5A2860358300FE7027 = {
@@ -326,7 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				A5A37ED6286044F0007192BC /* Model */,
-				A518C0D8286201770077E5F0 /* ViewModel */,
+				A526F26728696D45005DE191 /* ViewModel */,
 				A5D88EA02861935500DCB623 /* Repository */,
 				A5A37ED4286044C4007192BC /* DataStore */,
 				A5537E7B2860369400FE7027 /* PullgoKit.h */,
@@ -338,7 +350,7 @@
 			isa = PBXGroup;
 			children = (
 				A5D88EAC286194F600DCB623 /* TestExtensions */,
-				A5D305362864412000FDEA6F /* ViewModelTests */,
+				A526F26A286970CE005DE191 /* ViewModelTests */,
 				A5D88EA6286194C900DCB623 /* RepositoryTests */,
 			);
 			path = PullgoKitTests;
@@ -496,20 +508,6 @@
 				A5A37EE628604666007192BC /* UserSessionDataStore.swift */,
 			);
 			path = UserSession;
-			sourceTree = "<group>";
-		};
-		A5D305362864412000FDEA6F /* ViewModelTests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModelTests;
-			sourceTree = "<group>";
-		};
-		A5D3053A2864493B00FDEA6F /* Onboarding */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		A5D88E9D28618A9500DCB623 /* Endpoint */ = {
@@ -847,6 +845,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5A37EE728604666007192BC /* UserSessionDataStore.swift in Sources */,
+				A526F26928696D50005DE191 /* SignUpViewModel.swift in Sources */,
 				A5D88EA5286193FE00DCB623 /* UserSessionRepository.swift in Sources */,
 				A5A37EE52860456D007192BC /* UserSessionDataStoreProtocol.swift in Sources */,
 				A5A37EDF286044F0007192BC /* Teacher.swift in Sources */,
@@ -868,6 +867,7 @@
 				A5D88EAB286194EF00DCB623 /* UserSessionRepositoryTests.swift in Sources */,
 				A5D88EB02861951E00DCB623 /* TestInstance.swift in Sources */,
 				A5D88EAE2861950100DCB623 /* TestExtension.swift in Sources */,
+				A526F26C286970DF005DE191 /* SignUpViewModelTests.swift in Sources */,
 				A5D88EB4286195C900DCB623 /* TestUserSession.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
