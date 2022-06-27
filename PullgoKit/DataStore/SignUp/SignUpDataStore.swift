@@ -14,6 +14,8 @@ public final class SignUpDataStore: SignUpDataStoreProtocol {
     // MARK: - Properties
     
     // MARK: - Methods
+    public init() {}
+    
     public func isStudentExists(username: String) -> AnyPublisher<Exist, Error> {
         let endpoint = Endpoint(paths: ["student", username, "exists"])
         
