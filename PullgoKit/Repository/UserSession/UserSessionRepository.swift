@@ -19,7 +19,8 @@ public final class UserSessionRepository: UserSessionRepositoryProtocol {
         self.dataStore = dataStore
     }
     
-    public func signIn(credential: Credential) -> AnyPublisher<UserSession, Error> {
+    public func signIn(username: String, password: String) -> AnyPublisher<UserSession, Error> {
+        let credential = Credential(username: username, password: password)
         return dataStore.signIn(credential: credential)
             .mapError(mapSignInFailError)
             .eraseToAnyPublisher()
@@ -43,14 +44,15 @@ public final class UserSessionRepository: UserSessionRepositoryProtocol {
     
     // MARK: - Privates
     private func mapSignInFailError(_ error: Error) -> Error {
-        guard let error = error as? PullgoError else {
+        guard let error = error as? NetworkError else {
             return error
         }
         
-        if case .networkError(error: .invalidCode(code: 401)) = error {
+        if case .invalidCode(let code) = error,
+           code == 401 {
             return PullgoError.signInFail
         } else {
-            return error
+            return PullgoError.networkError(error: error)
         }
     }
 }

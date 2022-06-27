@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 public protocol UserSessionRepositoryProtocol {
-    func signIn(credential: Credential) -> AnyPublisher<UserSession, Error>
+    func signIn(username: String, password: String) -> AnyPublisher<UserSession, Error>
     func rememberMe() -> AnyPublisher<UserSession?, Never>
     func signUp(student: Student) -> AnyPublisher<Student, Error>
     func signUp(teacher: Teacher) -> AnyPublisher<Teacher, Error>
