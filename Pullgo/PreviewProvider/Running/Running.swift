@@ -8,11 +8,11 @@
 import PullgoKit
 import SwiftUI
 
-extension PreviewInstance: RunningViewFactory {
-    func makeRunningView(authenticationState: Binding<AuthenticationState>) -> RunningView {
+extension PreviewInstance {
+    func getRunningView(_ authenticationState: AuthenticationState) -> RunningView {
         return RunningView(
             authenticationState: authenticationState,
-            onboardingView: getOnboardingView()
+            onboardingViewFactory: getOnboardingView
         )
     }
 }
