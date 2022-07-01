@@ -77,29 +77,10 @@ class SucceedSignUpViewModelTests: XCTestCase {
     
     func test_SignUpViewModel_requestVerificationNumber_shouldSetVerificationStateToRequested() {
         // Given
-        let expectation = self.expectation()
         
         // When
-        var state: SignUpViewModel.PhoneVerificationState?
-        viewModel.$verificationState
-            .sink(receiveValue: { receivedState in
-                if case .requested = receivedState {
-                    state = receivedState
-                    expectation.fulfill()
-                }
-            })
-            .store(in: &cancellables)
-        
-        viewModel.requestVerificationNumber()
         
         // Then
-        wait(for: [expectation], timeout: 2)
-        switch state {
-            case .requested(let number):
-                XCTAssertEqual(number, "1234")
-            default:
-                XCTFail("state must be requested.")
-        }
     }
     
     func test_SignUpViewModel_isUsernameExists_shouldSetUsernameExistsStateToExists_whenExistingUsernameGiven() {

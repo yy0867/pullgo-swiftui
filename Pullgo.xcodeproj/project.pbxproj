@@ -18,6 +18,8 @@
 		A526F27528698FFB005DE191 /* SignUpDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A526F27428698FFB005DE191 /* SignUpDataStore.swift */; };
 		A526F278286991AD005DE191 /* SignUpRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A526F277286991AD005DE191 /* SignUpRepositoryProtocol.swift */; };
 		A526F27A28699209005DE191 /* SignUpRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A526F27928699209005DE191 /* SignUpRepository.swift */; };
+		A526F27C286992EA005DE191 /* SignUpRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A526F27B286992EA005DE191 /* SignUpRepositoryTests.swift */; };
+		A526F27E28699301005DE191 /* TestSignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A526F27D28699301005DE191 /* TestSignUp.swift */; };
 		A5537E672860358300FE7027 /* PullgoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5537E662860358300FE7027 /* PullgoApp.swift */; };
 		A5537E6B2860358300FE7027 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5537E6A2860358300FE7027 /* Assets.xcassets */; };
 		A5537E6E2860358300FE7027 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5537E6D2860358300FE7027 /* Preview Assets.xcassets */; };
@@ -136,6 +138,8 @@
 		A526F27428698FFB005DE191 /* SignUpDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpDataStore.swift; sourceTree = "<group>"; };
 		A526F277286991AD005DE191 /* SignUpRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRepositoryProtocol.swift; sourceTree = "<group>"; };
 		A526F27928699209005DE191 /* SignUpRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRepository.swift; sourceTree = "<group>"; };
+		A526F27B286992EA005DE191 /* SignUpRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRepositoryTests.swift; sourceTree = "<group>"; };
+		A526F27D28699301005DE191 /* TestSignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestSignUp.swift; sourceTree = "<group>"; };
 		A5537E632860358300FE7027 /* Pullgo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pullgo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5537E662860358300FE7027 /* PullgoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullgoApp.swift; sourceTree = "<group>"; };
 		A5537E6A2860358300FE7027 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -579,6 +583,7 @@
 			isa = PBXGroup;
 			children = (
 				A5D88EAA286194EF00DCB623 /* UserSessionRepositoryTests.swift */,
+				A526F27B286992EA005DE191 /* SignUpRepositoryTests.swift */,
 			);
 			path = RepositoryTests;
 			sourceTree = "<group>";
@@ -592,19 +597,12 @@
 			path = TestExtensions;
 			sourceTree = "<group>";
 		};
-		A5D88EB1286195B100DCB623 /* UserSession */ = {
-			isa = PBXGroup;
-			children = (
-				A5D88EB3286195C900DCB623 /* TestUserSession.swift */,
-			);
-			path = UserSession;
-			sourceTree = "<group>";
-		};
 		A5D88EB2286195B700DCB623 /* Instances */ = {
 			isa = PBXGroup;
 			children = (
 				A5D88EAF2861951E00DCB623 /* TestInstance.swift */,
-				A5D88EB1286195B100DCB623 /* UserSession */,
+				A5D88EB3286195C900DCB623 /* TestUserSession.swift */,
+				A526F27D28699301005DE191 /* TestSignUp.swift */,
 			);
 			path = Instances;
 			sourceTree = "<group>";
@@ -911,6 +909,8 @@
 				A5D88EAB286194EF00DCB623 /* UserSessionRepositoryTests.swift in Sources */,
 				A5D88EB02861951E00DCB623 /* TestInstance.swift in Sources */,
 				A5D88EAE2861950100DCB623 /* TestExtension.swift in Sources */,
+				A526F27E28699301005DE191 /* TestSignUp.swift in Sources */,
+				A526F27C286992EA005DE191 /* SignUpRepositoryTests.swift in Sources */,
 				A526F26C286970DF005DE191 /* SignUpViewModelTests.swift in Sources */,
 				A5D88EB4286195C900DCB623 /* TestUserSession.swift in Sources */,
 			);
