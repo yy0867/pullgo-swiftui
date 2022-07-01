@@ -8,6 +8,11 @@
 public struct Teacher: Codable {
     public let id: Int?
     public let account: Account
+    
+    init(id: Int? = nil, account: Account) {
+        self.id = id
+        self.account = account
+    }
 }
 
 extension Teacher: Identifiable, Equatable {}

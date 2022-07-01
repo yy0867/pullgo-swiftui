@@ -6,17 +6,22 @@
 //
 
 import Foundation
+import Combine
 
-typealias AlertPublisher = (isPresented: Bool, message: String?)
+public typealias AlertPublisher = (isPresented: Bool, message: String?)
 
-protocol AlertPublishable: AnyObject {
+public protocol AlertPublishable: AnyObject {
     var alert: AlertPublisher { get set }
     
     func sendAlert(_ message: String)
 }
 
-extension AlertPublishable {
+public extension AlertPublishable {
     func sendAlert(_ message: String = "오류가 발생했습니다. 잠시 후 다시 시도해주세요.") {
         alert = (true, message)
+    }
+    
+    func sendAlert(_ completion: Subscribers.Completion<Error>) {
+        self.sendAlert()
     }
 }

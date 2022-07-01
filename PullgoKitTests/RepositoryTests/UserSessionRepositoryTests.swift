@@ -18,12 +18,6 @@ import Combine
 /// `rememberMe()`
 ///   - 호출 시 `UserSession` 반환
 ///
-/// `signUp(student:)`
-///   - 회원가입 시 해당 `Student` 반환
-///
-/// `signUp(teacher:)`
-///   - 회원가입 시 해당 `Teacher` 반환
-///
 /// `signOut()`
 ///   - 호출 시 `true` 반환
 class SucceedUserSessionRepositoryTests: XCTestCase {
@@ -99,54 +93,6 @@ class SucceedUserSessionRepositoryTests: XCTestCase {
         wait(for: [expectation], timeout: 3)
         XCTAssertNotNil(userSession)
         XCTAssertEqual("token", userSession?.token)
-    }
-    
-    func test_UserSessionRepository_signUpForStudent_shouldReturnSignedUpStudent() {
-        // Given
-        let expectation = self.expectation()
-        let fakeStudent = TestInstance.shared.fakeStudent
-        
-        // When
-        var student: Student?
-        repository.signUp(student: fakeStudent)
-            .sink(
-                receiveCompletion: failWhenReceiveError,
-                receiveValue: { receivedStudent in
-                    student = receivedStudent
-                    expectation.fulfill()
-                }
-            )
-            .store(in: &cancellables)
-        
-        // Then
-        wait(for: [expectation], timeout: 3)
-        XCTAssertEqual(fakeStudent.account.username, student?.account.username)
-        XCTAssertEqual(fakeStudent.account.fullName, student?.account.fullName)
-        XCTAssertEqual(fakeStudent.account.phone, student?.account.phone)
-    }
-    
-    func test_UserSessionRepository_signUpForTeacher_shouldReturnSignedUpTeacher() {
-        // Given
-        let expectation = self.expectation()
-        let fakeTeacher = TestInstance.shared.fakeTeacher
-        
-        // When
-        var teacher: Teacher?
-        repository.signUp(teacher: fakeTeacher)
-            .sink(
-                receiveCompletion: failWhenReceiveError,
-                receiveValue: { receivedTeacher in
-                    teacher = receivedTeacher
-                    expectation.fulfill()
-                }
-            )
-            .store(in: &cancellables)
-        
-        // Then
-        wait(for: [expectation], timeout: 3)
-        XCTAssertEqual(fakeTeacher.account.username, teacher?.account.username)
-        XCTAssertEqual(fakeTeacher.account.fullName, teacher?.account.fullName)
-        XCTAssertEqual(fakeTeacher.account.phone, teacher?.account.phone)
     }
     
     func test_UserSessionRepository_signOut_shouldReturnTrue() {
@@ -277,60 +223,6 @@ class FailUserSessionRepositoryTests: XCTestCase {
         // Then
         wait(for: [expectation], timeout: 3)
         XCTAssertNil(userSession)
-    }
-    
-    func test_UserSessionRepository_signUpForStudent_shouldReturnError() {
-        // Given
-        let expectation = self.expectation()
-        let fakeStudent = TestInstance.shared.fakeStudent
-        
-        // When
-        var error: Error?
-        repository.signUp(student: fakeStudent)
-            .sink(
-                receiveCompletion: { completion in
-                    switch completion {
-                        case .finished:
-                            XCTFail("should return error.")
-                        case .failure(let receivedError):
-                            error = receivedError
-                    }
-                    expectation.fulfill()
-                },
-                receiveValue: failWhenReceiveValue
-            )
-            .store(in: &cancellables)
-        
-        // Then
-        wait(for: [expectation], timeout: 3)
-        XCTAssertNotNil(error)
-    }
-    
-    func test_UserSessionRepository_signUpForTeacher_shouldReturnError() {
-        // Given
-        let expectation = self.expectation()
-        let fakeTeacher = TestInstance.shared.fakeTeacher
-        
-        // When
-        var error: Error?
-        repository.signUp(teacher: fakeTeacher)
-            .sink(
-                receiveCompletion: { completion in
-                    switch completion {
-                        case .finished:
-                            XCTFail("should return error.")
-                        case .failure(let receivedError):
-                            error = receivedError
-                    }
-                    expectation.fulfill()
-                },
-                receiveValue: failWhenReceiveValue
-            )
-            .store(in: &cancellables)
-        
-        // Then
-        wait(for: [expectation], timeout: 3)
-        XCTAssertNotNil(error)
     }
     
     func test_UserSessionRepository_signOut_shouldReturnFalse() {

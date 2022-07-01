@@ -85,26 +85,6 @@ class TestUserSessionDataStore: UserSessionDataStoreProtocol {
         .eraseToAnyPublisher()
     }
     
-    func signUp(student: Student) -> AnyPublisher<Student, Error> {
-        if !isSucceedCase {
-            return Fail(error: PullgoError.networkError(error: .invalidCode(code: 400)))
-                .eraseToAnyPublisher()
-        } else {
-            return Result.Publisher(student)
-                .eraseToAnyPublisher()
-        }
-    }
-    
-    func signUp(teacher: Teacher) -> AnyPublisher<Teacher, Error> {
-        if !isSucceedCase {
-            return Fail(error: PullgoError.networkError(error: .invalidCode(code: 400)))
-                .eraseToAnyPublisher()
-        } else {
-            return Result.Publisher(teacher)
-                .eraseToAnyPublisher()
-        }
-    }
-    
     func signOut() -> AnyPublisher<Bool, Never> {
         return Just(isSucceedCase)
             .eraseToAnyPublisher()

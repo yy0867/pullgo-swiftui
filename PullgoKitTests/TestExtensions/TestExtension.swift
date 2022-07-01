@@ -12,7 +12,7 @@ import XCTest
 extension XCTestCase {
     
     func expectation(_ description: String = #function) -> XCTestExpectation {
-        return self.expectation(description: description)
+        return XCTestExpectation(description: description)
     }
     
     func failWhenReceiveError(_ completion: Subscribers.Completion<Error>) {

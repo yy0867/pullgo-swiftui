@@ -11,6 +11,20 @@ public struct Student: Codable {
     public let parentPhone: String
     public let schoolName: String
     public let schoolYear: Int
+    
+    init(
+        id: Int? = nil,
+        account: Account,
+        parentPhone: String,
+        schoolName: String,
+        schoolYear: Int
+    ) {
+        self.id = id
+        self.account = account
+        self.parentPhone = parentPhone
+        self.schoolName = schoolName
+        self.schoolYear = schoolYear
+    }
 }
 
 extension Student: Identifiable, Equatable {}

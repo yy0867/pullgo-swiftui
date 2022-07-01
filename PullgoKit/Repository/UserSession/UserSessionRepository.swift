@@ -30,14 +30,6 @@ public final class UserSessionRepository: UserSessionRepositoryProtocol {
         return dataStore.rememberMe()
     }
     
-    public func signUp(student: Student) -> AnyPublisher<Student, Error> {
-        return dataStore.signUp(student: student)
-    }
-    
-    public func signUp(teacher: Teacher) -> AnyPublisher<Teacher, Error> {
-        return dataStore.signUp(teacher: teacher)
-    }
-    
     public func signOut() -> AnyPublisher<Bool, Never> {
         return dataStore.signOut()
     }
