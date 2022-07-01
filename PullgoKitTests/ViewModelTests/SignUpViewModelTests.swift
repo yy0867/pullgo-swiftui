@@ -31,42 +31,121 @@ class SucceedSignUpViewModelTests: XCTestCase {
     
     func test_SignUpViewModel_signUpForStudent_shouldSetSignUpStateToSignedUp() {
         // Given
+        let expectation = self.expectation()
+        viewModel.isStudent = true
         
         // When
+        var state: SignUpViewModel.SignUpState?
+        viewModel.$signUpState
+            .sink(receiveValue: { receivedState in
+                if receivedState == .signedUp {
+                    state = receivedState
+                    expectation.fulfill()
+                }
+            })
+            .store(in: &cancellables)
+        
+        viewModel.signUp()
         
         // Then
+        wait(for: [expectation], timeout: 2)
+        XCTAssertEqual(state, .signedUp)
     }
     
     func test_SignUpViewModel_signUpForTeacher_shouldSetSignUpStateToSignedUp() {
         // Given
+        let expectation = self.expectation()
+        viewModel.isStudent = false
         
         // When
+        var state: SignUpViewModel.SignUpState?
+        viewModel.$signUpState
+            .sink(receiveValue: { receivedState in
+                if receivedState == .signedUp {
+                    state = receivedState
+                    expectation.fulfill()
+                }
+            })
+            .store(in: &cancellables)
+        
+        viewModel.signUp()
         
         // Then
+        wait(for: [expectation], timeout: 2)
+        XCTAssertEqual(state, .signedUp)
     }
     
     func test_SignUpViewModel_requestVerificationNumber_shouldSetVerificationStateToRequested() {
         // Given
+        let expectation = self.expectation()
         
         // When
+        var state: SignUpViewModel.PhoneVerificationState?
+        viewModel.$verificationState
+            .sink(receiveValue: { receivedState in
+                if case .requested = receivedState {
+                    state = receivedState
+                    expectation.fulfill()
+                }
+            })
+            .store(in: &cancellables)
+        
+        viewModel.requestVerificationNumber()
         
         // Then
+        wait(for: [expectation], timeout: 2)
+        switch state {
+            case .requested(let number):
+                XCTAssertEqual(number, "1234")
+            default:
+                XCTFail("state must be requested.")
+        }
     }
     
     func test_SignUpViewModel_isUsernameExists_shouldSetUsernameExistsStateToExists_whenExistingUsernameGiven() {
         // Given
+        let expectation = self.expectation()
+        viewModel.username = "username"
         
         // When
+        var state: SignUpViewModel.UsernameExistState?
+        viewModel.$usernameExistState
+            .sink(receiveValue: { receivedState in
+                if receivedState == .exists {
+                    state = receivedState
+                    expectation.fulfill()
+                }
+            })
+            .store(in: &cancellables)
+        
+        viewModel.isUsernameExists()
         
         // Then
+        wait(for: [expectation], timeout: 2)
+        XCTAssertEqual(state, .exists)
     }
     
     func test_SignUpViewModel_isUsernameExists_shouldSetUsernameExistsStateToNotExists_whenNotExistingUsernameGiven() {
         // Given
+        let expectation = self.expectation()
+        viewModel.username = "notExists"
         
         // When
+        var state: SignUpViewModel.UsernameExistState?
+        viewModel.$usernameExistState
+            .sink(receiveValue: { receivedState in
+                if receivedState == .notExists {
+                    state = receivedState
+                    expectation.fulfill()
+                }
+            })
+            .store(in: &cancellables)
+        
+        viewModel.isUsernameExists()
         
         // Then
+        wait(for: [expectation], timeout: 2)
+        XCTAssertEqual(state, .notExists)
     }
 }
 
@@ -87,25 +166,105 @@ class FailSignUpViewModelTests: XCTestCase {
     
     func test_SignUpViewModel_signUp_shouldSetSignedUpStateToFailed_andPublishAlert() {
         // Given
+        let expectation = self.expectation()
+        let alertExpectation = XCTestExpectation(description: "alert")
+        viewModel.isStudent = .random()
         
         // When
+        var state: SignUpViewModel.SignUpState?
+        viewModel.$signUpState
+            .sink(receiveValue: { receivedState in
+                if receivedState == .none {
+                    state = receivedState
+                    expectation.fulfill()
+                }
+            })
+            .store(in: &cancellables)
+        
+        var alert: AlertPublisher?
+        viewModel.$alert
+            .sink(receiveValue: { receivedAlert in
+                alert = receivedAlert
+                alertExpectation.fulfill()
+            })
+            .store(in: &cancellables)
+        
+        viewModel.signUp()
         
         // Then
+        wait(for: [expectation, alertExpectation], timeout: 2)
+        XCTAssertEqual(state, SignUpViewModel.SignUpState.none)
+        XCTAssertNotNil(alert)
     }
     
     func test_SignUpViewModel_requestVerificationNumber_shouldSetVerificationStateToNone_andPublishAlert() {
         // Given
+        let expectation = self.expectation()
+        let alertExpectation = XCTestExpectation(description: "alert")
         
         // When
+        var state: SignUpViewModel.PhoneVerificationState?
+        viewModel.$verificationState
+            .sink(receiveValue: { receivedState in
+                if case .none = receivedState {
+                    state = receivedState
+                    expectation.fulfill()
+                }
+            })
+            .store(in: &cancellables)
+        
+        var alert: AlertPublisher?
+        viewModel.$alert
+            .sink(receiveValue: { receivedAlert in
+                alert = receivedAlert
+                alertExpectation.fulfill()
+            })
+            .store(in: &cancellables)
+        
+        viewModel.requestVerificationNumber()
         
         // Then
+        wait(for: [expectation, alertExpectation], timeout: 2)
+        XCTAssertNotNil(state)
+        XCTAssertNotNil(alert)
+        switch state! {
+            case SignUpViewModel.PhoneVerificationState.none:
+                break
+            default:
+                XCTFail("state must be none.")
+        }
     }
     
     func test_SignUpViewModel_isUsernameExists_shouldSetUsernameExistStateToNone_andPublishAlert() {
         // Given
+        let expectation = self.expectation()
+        let alertExpectation = XCTestExpectation(description: "alert")
+        viewModel.username = "username"
         
         // When
+        var state: SignUpViewModel.UsernameExistState?
+        viewModel.$usernameExistState
+            .sink(receiveValue: { receivedState in
+                if receivedState == .none {
+                    state = receivedState
+                    expectation.fulfill()
+                }
+            })
+            .store(in: &cancellables)
+        
+        var alert: AlertPublisher?
+        viewModel.$alert
+            .sink(receiveValue: { receivedAlert in
+                alert = receivedAlert
+                alertExpectation.fulfill()
+            })
+            .store(in: &cancellables)
+        
+        viewModel.isUsernameExists()
         
         // Then
+        wait(for: [expectation, alertExpectation], timeout: 2)
+        XCTAssertNotNil(alert)
+        XCTAssertEqual(state, SignUpViewModel.UsernameExistState.none)
     }
 }
