@@ -31,7 +31,7 @@ class SucceedSignUpRepositoryTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        repository = SignUpRepository(dataStore: TestInstance.shared.succeedSignUpDataStore)
+        repository = TestInstance.shared.succeedSignUpRepository
     }
     
     override func tearDown() {
@@ -177,9 +177,88 @@ class SucceedSignUpRepositoryTests: XCTestCase {
 }
 
 /// `SignUpRepositoryTests` - Fail Cases
+///
+/// `isStudentExists(username:)`
+///   - `Bool`이 아닌 에러를 반환
+///
+/// `isTeacherExists(username:)`
+///   - `Bool`이 아닌 에러를 반환
+///
+/// `signUp(student:)`
+///   - 에러 발생 시 에러를 반환
+///
+/// `signUp(teacher:)`
+///   - 에러 발생 시 에러를 반환
 class FailSignUpRepositoryTests: XCTestCase {
+    
+    var repository: SignUpRepositoryProtocol!
+    private var cancellables = Set<AnyCancellable>()
+    
+    override func setUp() {
+        super.setUp()
+        repository = TestInstance.shared.failSignUpRepository
+    }
+    
+    override func tearDown() {
+        super.tearDown()
+        repository = nil
+    }
+    
+    func test_SignUpRepository_isStudentExists_shouldReturnError() {
+        // Given
+        let expectation = self.expectation()
+        let username = "username"
+        
+        // When
+        var error: Error?
+        repository.isStudentExists(username: username)
+            .sink(
+                receiveCompletion: { completion in
+                    switch completion {
+                        case .failure(let receivedError):
+                            error = receivedError
+                        case .finished:
+                            XCTFail("should return error.")
+                    }
+                    expectation.fulfill()
+                },
+                receiveValue: failWhenReceiveValue
+            )
+            .store(in: &cancellables)
+        
+        // Then
+        wait(for: [expectation], timeout: 3)
+        XCTAssertNotNil(error)
+    }
+    
+    func test_SignUpRepository_isTeacherExists_shouldReturnError() {
+        // Given
+        let expectation = self.expectation()
+        let username = "username"
+        
+        // When
+        var error: Error?
+        repository.isTeacherExists(username: username)
+            .sink(
+                receiveCompletion: { completion in
+                    switch completion {
+                        case .failure(let receivedError):
+                            error = receivedError
+                        case .finished:
+                            XCTFail("should return error.")
+                    }
+                    expectation.fulfill()
+                },
+                receiveValue: failWhenReceiveValue
+            )
+            .store(in: &cancellables)
+        
+        // Then
+        wait(for: [expectation], timeout: 3)
+        XCTAssertNotNil(error)
+    }
 
-    func test_UserSessionRepository_signUpForStudent_shouldReturnError() {
+    func test_SignUpRepository_signUpForStudent_shouldReturnError() {
         // Given
         let expectation = self.expectation()
         let fakeStudent = TestInstance.shared.fakeStudent
@@ -206,7 +285,7 @@ class FailSignUpRepositoryTests: XCTestCase {
         XCTAssertNotNil(error)
     }
 
-    func test_UserSessionRepository_signUpForTeacher_shouldReturnError() {
+    func test_SignUpRepository_signUpForTeacher_shouldReturnError() {
         // Given
         let expectation = self.expectation()
         let fakeTeacher = TestInstance.shared.fakeTeacher
