@@ -19,18 +19,22 @@ public final class SignUpRepository: SignUpRepositoryProtocol {
     }
     
     public func isStudentExists(username: String) -> AnyPublisher<Bool, Error> {
-        
+        return dataStore.isStudentExists(username: username)
+            .map(\.exists)
+            .eraseToAnyPublisher()
     }
     
     public func isTeacherExists(username: String) -> AnyPublisher<Bool, Error> {
-        
+        return dataStore.isTeacherExists(username: username)
+            .map(\.exists)
+            .eraseToAnyPublisher()
     }
     
     public func signUp(student: Student) -> AnyPublisher<Student, Error> {
-        
+        return dataStore.signUp(student: student)
     }
     
     public func signUp(teacher: Teacher) -> AnyPublisher<Teacher, Error> {
-        
+        return dataStore.signUp(teacher: teacher)
     }
 }
