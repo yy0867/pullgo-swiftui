@@ -25,4 +25,15 @@ class TestInstance {
     
     let succeedUserSessionDataStore = TestUserSessionDataStore(isSucceedCase: true)
     let failUserSessionDataStore = TestUserSessionDataStore(isSucceedCase: false)
+    
+    // MARK: - SignUp
+    let succeedSignUpRepository = SignUpRepository(
+        dataStore: TestSignUpDataStore(isSucceedCase: true)
+    )
+    let failSignUpRepository = SignUpRepository(
+        dataStore: TestSignUpDataStore(isSucceedCase: false)
+    )
+    
+    let succeedSignUpDataStore = TestSignUpDataStore(isSucceedCase: true)
+    let failSignUpDataStore = TestSignUpDataStore(isSucceedCase: false)
 }
